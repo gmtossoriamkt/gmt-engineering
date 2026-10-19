@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ГМТ Инжиниринг — разработка приборов и электроники под ключ</title>
+<meta name="description" content="Разработка приборов под ключ: схемотехника и печатные платы, прошивки, прикладное ПО, корпуса и прототипы, подготовка к сертификации. Один договор — одна команда.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://gmt-engineering.ru/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ГМТ Инжиниринг — разработка приборов и электроники под ключ">
+<meta property="og:description" content="Схемотехника, платы, прошивки, ПО и корпуса — от технического задания до опытной партии.">
+<meta property="og:url" content="https://gmt-engineering.ru/">
+<meta name="theme-color" content="#102B3F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ГМТ Инжиниринг","legalName":"ООО «Глобальные Медицинские Технологии»","url":"https://gmt-engineering.ru/","telephone":"+7 988 877-72-95","address":{"@type":"PostalAddress","streetAddress":"1-й Тверской-Ямской пер., д. 16, помещ. 1/п","addressLocality":"Москва","postalCode":"125047","addressCountry":"RU"}}
+</script>
+<style>
+:root{
+  --navy:#102B3F;--navy-2:#0B2133;--cyan:#00B3B3;--cyan-text:#007F80;
+  --graphite:#23272E;--muted:#5B6675;--line:#DDE3EA;--bg:#F5F7FA;--white:#fff;
+  --radius:14px;--wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',system-ui,sans-serif;color:var(--graphite);background:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* logo */
+.logo{display:inline-flex;align-items:center;gap:12px;color:var(--navy);white-space:nowrap}
+.logo b{font-weight:800;font-size:26px;letter-spacing:.02em;line-height:1}
+.logo i{width:3px;height:26px;background:var(--cyan);display:block}
+.logo span{font-weight:600;font-size:13px;letter-spacing:.32em}
+.logo.light{color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
+nav a:hover{color:var(--cyan-text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:10px;font:600 15px/1 'Montserrat',sans-serif;cursor:pointer;border:2px solid transparent;transition:.15s}
+.btn-pri{background:var(--cyan);color:var(--navy)}
+.btn-pri:hover{background:#00C9C9}
+.btn-out{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-out:hover{border-color:#fff}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--navy-2)}
+.menu-btn{display:none}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:88px;padding-bottom:96px;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#7FE0E0}
+.kicker::before{content:"";width:3px;height:16px;background:var(--cyan)}
+.hero h1{font-size:clamp(32px,4.4vw,54px);line-height:1.12;font-weight:800;margin:20px 0 22px;letter-spacing:-.01em}
+.hero p.lead{font-size:18px;color:#C9D6E2;max-width:560px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.hero-facts span{font-size:13px;font-weight:500;color:#C9D6E2;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 14px}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+
+/* sections */
+section{padding:96px 0}
+.sec-head{max-width:720px;margin-bottom:48px}
+.sec-head .kicker{color:var(--cyan-text)}
+h2{font-size:clamp(26px,3vw,38px);line-height:1.2;font-weight:800;color:var(--navy);margin-top:14px}
+.sec-head p{margin-top:14px;color:var(--muted);font-size:17px}
+.alt{background:var(--bg)}
+
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:12px;transition:.2s}
+.card:hover{border-color:var(--cyan);box-shadow:0 10px 30px rgba(16,43,63,.08)}
+.card .ico{width:48px;height:48px;border-radius:12px;background:#E6F7F7;display:flex;align-items:center;justify-content:center;color:var(--cyan-text)}
+.card h3{font-size:19px;font-weight:700;color:var(--navy);line-height:1.3}
+.card p{color:var(--muted);font-size:15px}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--graphite)}
+.card ul li::before{content:"—";color:var(--cyan-text);margin-right:8px}
+.card .more{margin-top:auto;font-weight:600;font-size:14px;color:var(--cyan-text)}
+.card.dark{background:var(--navy);border-color:var(--navy);color:#fff}
+.card.dark h3{color:#fff}.card.dark p{color:#C9D6E2}
+.card.dark .ico{background:rgba(0,179,179,.15);color:#7FE0E0}
+
+.inds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ind{border:1px solid var(--line);background:#fff;border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:6px}
+.ind b{font-size:16px;color:var(--navy);font-weight:700}
+.ind span{font-size:14px;color:var(--muted)}
+
+.steps{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;counter-reset:s}
+.steps li{position:relative;padding-top:56px}
+.steps li::before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;left:0;font-weight:800;font-size:28px;color:var(--cyan)}
+.steps li::after{content:"";position:absolute;top:18px;left:54px;right:-8px;height:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-size:16px;color:var(--navy);margin-bottom:6px;line-height:1.35}
+.steps span{font-size:14px;color:var(--muted)}
+
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.why div{border-top:3px solid var(--cyan);padding-top:18px}
+.why b{display:block;color:var(--navy);font-size:17px;margin-bottom:8px}
+.why span{color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact h2{color:#fff}
+.contact .sec-head p{color:#C9D6E2}
+.cinfo{display:flex;flex-direction:column;gap:18px;margin-top:32px}
+.cinfo a,.cinfo div{display:flex;flex-direction:column;gap:2px}
+.cinfo small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7FE0E0}
+.cinfo strong{font-size:20px;font-weight:600}
+form.frm{background:#fff;color:var(--graphite);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:16px}
+.frm label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--navy)}
+.frm input,.frm textarea{width:100%;font:inherit;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--graphite)}
+.frm input:focus,.frm textarea:focus{outline:2px solid var(--cyan);border-color:var(--cyan);background:#fff}
+.frm textarea{min-height:110px;resize:vertical}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+.agree input{width:auto;margin-top:3px;accent-color:var(--cyan)}
+.agree a{color:var(--cyan-text);text-decoration:underline}
+.frm .btn{width:100%}
+.frm .ok{display:none;padding:14px;border-radius:10px;background:#E6F7F7;color:var(--navy);font-weight:600}
+
+footer{background:var(--navy-2);color:#9FB2C3;font-size:14px;padding:40px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+footer a:hover{color:#fff}
+
+@media (max-width:1020px){
+  .hero .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero-art{display:none}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .inds,.why{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li::after{display:none}
+}
+@media (max-width:760px){
+  nav,.hdr .btn{display:none}
+  .menu-btn{display:inline-flex;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;color:var(--navy)}
+  header.open nav{display:block;position:absolute;top:76px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:16px 24px}
+  header.open nav ul{flex-direction:column;gap:14px}
+  section{padding:64px 0}
+  .hero .wrap{padding-top:56px;padding-bottom:64px}
+  .g3,.inds,.why,.steps{grid-template-columns:1fr}
+  .logo span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap hdr">
+    <a class="logo" href="/" aria-label="ГМТ Инжиниринг — на главную"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+    <nav aria-label="Основное меню">
+      <ul>
+        <li><a href="#services">Направления</a></li>
+        <li><a href="#industries">Отрасли</a></li>
+        <li><a href="#process">Как работаем</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-dark" href="#contact">Оценить проект</a>
+    <button class="menu-btn" type="button" aria-label="Открыть меню" onclick="this.closest('header').classList.toggle('open')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Контрактная разработка</span>
+      <h1>Разработка приборов и электроники под ключ</h1>
+      <p class="lead">Схемотехника, печатные платы, прошивки, прикладное ПО и корпуса — от технического задания до опытной партии. Один договор и одна команда отвечают за то, чтобы прибор заработал.</p>
+      <div class="ctas">
+        <a class="btn btn-pri" href="#contact">Обсудить проект</a>
+        <a class="btn btn-out" href="#services">Направления работ</a>
+      </div>
+      <div class="hero-facts">
+        <span>Железо + прошивка + ПО</span>
+        <span>NDA с первого контакта</span>
+        <span>Подготовка к сертификации</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 440 400" fill="none">
+        <g stroke="#00B3B3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
+          <path d="M20 80H140L180 120V180"/>
+          <path d="M20 140H100L130 170V250L160 280H230"/>
+          <path d="M420 60H320L290 90V150"/>
+          <path d="M420 300H330L300 270V230"/>
+          <path d="M120 380V320L150 290H200"/>
+          <path d="M340 380V330"/>
+        </g>
+        <g fill="none" stroke="#00B3B3" stroke-width="3">
+          <circle cx="180" cy="188" r="8"/><circle cx="238" cy="280" r="8"/><circle cx="290" cy="158" r="8"/><circle cx="300" cy="222" r="8"/><circle cx="208" cy="290" r="8"/><circle cx="340" cy="322" r="8"/>
+        </g>
+        <rect x="170" y="120" width="150" height="150" rx="14" fill="#16374F" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="2"/>
+        <g stroke="#FFFFFF" stroke-opacity=".45" stroke-width="3" stroke-linecap="round">
+          <path d="M195 120V104M220 120V104M245 120V104M270 120V104M295 120V104"/>
+          <path d="M195 270V286M220 270V286M245 270V286M270 270V286M295 270V286"/>
+          <path d="M170 145H154M170 170H154M170 195H154M170 220H154M170 245H154"/>
+          <path d="M320 145H336M320 170H336M320 195H336M320 220H336M320 245H336"/>
+        </g>
+        <text x="245" y="203" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="30" fill="#FFFFFF" letter-spacing="1">ГМТ</text>
+        <rect x="226" y="214" width="38" height="3" fill="#00B3B3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Направления</span>
+      <h2>Берём весь прибор или отдельный этап</h2>
+      <p>Можно заказать разработку целиком или подключить нас там, где проект встал: нужна плата, прошивка, софт к прибору или корпус.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+        <h3>Схемотехника и печатные платы</h3>
+        <p>Принципиальные схемы, подбор компонентов с учётом доступности, трассировка и подготовка к производству.</p>
+        <ul><li>Аналоговые тракты и питание</li><li>Многослойные платы</li><li>Замена импортной элементной базы</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg></div>
+        <h3>Встраиваемое ПО (прошивки)</h3>
+        <p>Прошивки для микроконтроллеров и процессоров: драйверы, обработка сигналов, протоколы связи, обновление по воздуху.</p>
+        <ul><li>RTOS и bare-metal</li><li>Промышленные протоколы</li><li>Энергосбережение для автономных устройств</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h4M7 12h7"/></svg></div>
+        <h3>Прикладное ПО к прибору</h3>
+        <p>Программы для настройки и диагностики, мобильные приложения, облачный сбор данных и панели мониторинга.</p>
+        <ul><li>Десктоп и мобильные приложения</li><li>Телеметрия и облако</li><li>API для интеграции</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div>
+        <h3>Корпуса и прототипы</h3>
+        <p>Конструкция корпуса под условия эксплуатации, макеты и опытные образцы, подготовка к серийному выпуску.</p>
+        <ul><li>Пыле- и влагозащита</li><li>Опытные образцы и отладка</li><li>Конструкторская документация</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Подготовка к сертификации</h3>
+        <p>Закладываем требования регистрации, испытаний и метрологии ещё на этапе схемы — чтобы прибор не пришлось переделывать.</p>
+        <a class="more" href="https://med-local.ru" target="_blank" rel="noopener">Регуляторное сопровождение — Инженерный центр →</a>
+      </article>
+      <article class="card dark">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h4l3-8 4 16 3-8h2"/></svg></div>
+        <h3>Прибор под ключ</h3>
+        <p>Все этапы в одной команде: от технического задания до опытной партии и документации. Не нужно стыковать между собой несколько подрядчиков.</p>
+        <a class="more" href="#contact" style="color:#7FE0E0">Обсудить задачу →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="industries" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Отрасли</span>
+      <h2>Приборы для разных отраслей</h2>
+      <p>Учитываем отраслевые требования к надёжности, безопасности и условиям эксплуатации.</p>
+    </div>
+    <div class="inds">
+      <div class="ind"><b>Медицинские приборы</b><span>Диагностика, мониторинг, терапия</span></div>
+      <div class="ind"><b>Промышленность и АСУ ТП</b><span>Контроллеры, датчики, протоколы</span></div>
+      <div class="ind"><b>Лабораторное оборудование</b><span>Анализаторы, дозаторы, пробоподготовка</span></div>
+      <div class="ind"><b>Энергетика и КИПиА</b><span>Учёт, телеметрия, защита</span></div>
+      <div class="ind"><b>IoT и умные устройства</b><span>Беспроводные и носимые устройства</span></div>
+      <div class="ind"><b>Агро и экология</b><span>Мониторинг воды, воздуха, почвы</span></div>
+      <div class="ind"><b>Спецтехника и безопасность</b><span>Тяжёлые и полевые условия</span></div>
+      <div class="ind" style="background:var(--navy);border-color:var(--navy)"><b style="color:#fff">Своя задача?</b><a href="#contact" style="font-size:14px;color:#7FE0E0;font-weight:600">Расскажите о приборе →</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Как работаем</span>
+      <h2>От идеи до опытной партии</h2>
+      <p>Каждый этап заканчивается понятным результатом, который можно проверить и принять.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Техзадание и оценка</b><span>Разбираем задачу, фиксируем требования, сроки и смету</span></li>
+      <li><b>Схемотехника и плата</b><span>Схема, компоненты, трассировка, проверка технологичности</span></li>
+      <li><b>Прототип и прошивка</b><span>Собираем образец, пишем встраиваемое ПО, отлаживаем</span></li>
+      <li><b>Испытания и доработка</b><span>Проверяем на соответствие ТЗ и нормам, исправляем</span></li>
+      <li><b>Документация и партия</b><span>Комплект документации и подготовка к серии</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Почему ГМТ Инжиниринг</span>
+      <h2>Одна команда вместо нескольких подрядчиков</h2>
+    </div>
+    <div class="why">
+      <div><b>Железо, код и софт вместе</b><span>Схемотехники, программисты и конструкторы работают над одним прибором и отвечают за результат целиком.</span></div>
+      <div><b>Сертификация с первого дня</b><span>Требования регистрации и испытаний учитываем в схеме и прошивке, а не после изготовления образца.</span></div>
+      <div><b>Прозрачная смета</b><span>Работу делим на этапы с понятным результатом и стоимостью каждого этапа.</span></div>
+      <div><b>Конфиденциальность</b><span>Подписываем соглашение о неразглашении до того, как вы передадите техническую информацию.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="kicker">Контакты</span>
+        <h2>Расскажите о приборе</h2>
+        <p>Опишите задачу в двух словах: что должен делать прибор и на каком этапе проект. Свяжемся, уточним детали и предложим следующий шаг.</p>
+      </div>
+      <div class="cinfo">
+        <a href="tel:+79888777295"><small>Телефон</small><strong>+7 988 877-72-95</strong></a>
+        <a href="mailto:info@med-local.ru"><small>Почта</small><strong>info@med-local.ru</strong></a>
+        <div><small>Адрес</small><strong style="font-size:16px;font-weight:500">125047, Москва, 1-й Тверской-Ямской пер., д. 16</strong></div>
+      </div>
+    </div>
+    <form class="frm" action="https://formspree.io/f/mrewovkk" method="POST" onsubmit="return sendLead(this)">
+      <input type="hidden" name="_subject" value="Заявка с gmt-engineering.ru">
+      <input type="hidden" name="source" value="gmt-engineering.ru">
+      <div><label for="f-name">Имя и компания</label><input id="f-name" name="name" required autocomplete="organization" placeholder="Иван, ООО «Прибор»"></div>
+      <div><label for="f-phone">Телефон или почта</label><input id="f-phone" name="phone" required autocomplete="tel" placeholder="+7 ..."></div>
+      <div><label for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: нужен портативный анализатор, есть ТЗ, нужна разработка платы и прошивки"></textarea></div>
+      <div class="agree"><input type="checkbox" id="f-agree" required><label for="f-agree" style="font-weight:400;color:var(--muted);margin:0">Даю согласие на обработку персональных данных, включая трансграничную передачу (Formspree), в соответствии с <a href="/privacy/">Политикой конфиденциальности</a></label></div>
+      <button class="btn btn-pri" type="submit">Отправить заявку</button>
+      <div class="ok" role="status">Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo light" href="/"><b style="font-size:20px">ГМТ</b><i style="height:20px"></i><span style="font-size:11px">ИНЖИНИРИНГ</span></a>
+    <div>ООО «Глобальные Медицинские Технологии» · ОГРН 1247700287834 · ИНН 9710131540</div>
+    <div><a href="/privacy/">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<script>
+function sendLead(f){
+  var b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Отправляем…';
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+    .then(function(r){if(!r.ok)throw 0;f.querySelectorAll('div:not(.ok),button').forEach(function(e){e.style.display='none'});f.querySelector('.ok').style.display='block'})
+    .catch(function(){b.disabled=false;b.textContent='Отправить заявку';alert('Не удалось отправить. Позвоните нам: +7 988 877-72-95')});
+  return false;
+}
+document.querySelectorAll('header nav a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('header').classList.remove('open')})});
+</script>
+</body>
+</html>
