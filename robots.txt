@@ -1,4 +1,4 @@
-# Сайт в разработке: закрыт от индексации.
-# При запуске заменить на "Allow: /" и добавить Sitemap.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://gmt-engineering.ru/sitemap.xml
