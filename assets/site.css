@@ -128,3 +128,65 @@ footer a:hover{color:#fff}
   .cta{padding:26px}
 }
 .toc a.btn,.prose a.btn{color:var(--navy);text-decoration:none}
+
+/* страницы услуг и контакты */
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan-soft)}
+.page{padding-top:56px;padding-bottom:24px}
+.h2s{font-size:clamp(26px,3vw,40px);line-height:1.15;font-weight:600;letter-spacing:-.03em;color:var(--navy)}
+.subs{color:var(--muted);font-size:17px;margin-top:10px;max-width:760px}
+.sec{margin-top:72px}
+.sec:first-child{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.card{background:var(--bg);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:19px;font-weight:600;color:var(--navy);line-height:1.3}
+.card p{color:var(--muted);font-size:15px}
+.card .n{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--cyan-text)}
+a.card:hover{background:#E9F6F6}
+a.card b{margin-top:auto;color:var(--cyan-text);font-weight:600;font-size:15px}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:28px}
+.box{border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+.box h3{font-size:19px;font-weight:600;color:var(--navy);margin-bottom:12px}
+.box ul{padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--graphite)}
+.page .tbl,.page .faq,.page .note{margin-top:28px}
+.page .faq details p a,.page .note a{color:var(--cyan-text);text-decoration:underline}
+.formblk{margin:72px 16px 0;border-radius:var(--r-xl);background:var(--navy);color:#fff;padding:72px 0}
+.formblk .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.formblk .h2s{color:#fff}.formblk .subs{color:var(--soft)}
+.cinfo{display:flex;flex-direction:column;gap:20px;margin-top:36px}
+.cinfo small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-soft);margin-bottom:2px}
+.cinfo strong{font-size:21px;font-weight:600}
+.cinfo a:hover strong{color:var(--cyan-soft)}
+form.frm{background:#fff;color:var(--graphite);border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column;gap:18px}
+.frm label.l,.frm legend{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--navy)}
+.frm fieldset{border:0}
+.frm input[type=text],.frm input[type=tel],.frm textarea{width:100%;font:inherit;font-size:16px;padding:15px 18px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--graphite)}
+.frm input:focus,.frm textarea:focus{outline:2px solid var(--cyan);border-color:var(--cyan);background:#fff}
+.frm textarea{min-height:110px;resize:vertical}
+.ways{display:flex;flex-wrap:wrap;gap:10px}
+.ways label{cursor:pointer}
+.ways input{position:absolute;opacity:0;width:1px;height:1px}
+.ways span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:15px;font-weight:500;transition:.15s}
+.ways input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.ways input:focus-visible+span{outline:2px solid var(--cyan)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+.agree input{margin-top:3px;accent-color:var(--cyan)}
+.agree a{color:var(--cyan-text);text-decoration:underline}
+.frm .btn{width:100%}
+.frm .ok{display:none;padding:16px;border-radius:14px;background:#E6F7F7;color:var(--navy);font-weight:600}
+.req{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.req div{background:var(--bg);border-radius:var(--r);padding:20px 24px}
+.req small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.req b{color:var(--navy);font-weight:600}
+@media (max-width:1180px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .formblk .wrap{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .cards,.split,.req{grid-template-columns:1fr}
+  .formblk{margin:56px 8px 0;border-radius:24px;padding:48px 0}
+  form.frm{padding:24px}
+  .sec{margin-top:56px}
+  .acts .btn{width:100%}
+}

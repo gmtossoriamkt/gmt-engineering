@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gmt-engineering.ru/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://gmt-engineering.ru/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://gmt-engineering.ru/uslugi/razrabotka-pribora/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://gmt-engineering.ru/uslugi/skhemotekhnika/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://gmt-engineering.ru/uslugi/proshivki/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://gmt-engineering.ru/blog/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://gmt-engineering.ru/blog/razrabotka-pribora-pod-klyuch/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://gmt-engineering.ru/blog/razrabotka-pribora-pod-klyuch/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://gmt-engineering.ru/kontakty/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://gmt-engineering.ru/privacy/</loc><lastmod>2026-10-19</lastmod></url>
 </urlset>
