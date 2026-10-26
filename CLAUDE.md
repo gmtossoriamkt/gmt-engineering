@@ -9,7 +9,7 @@
 - Контакты: +7 985 316-91-04, Telegram @tandelovtat, info@gmt-engineering.ru. Юрлицо ООО «Глобальные Медицинские Технологии», ОГРН 1247700287834, ИНН 9710131540.
 - Форма заявок: Formspree `mrewovkk` (письма приходят в ящик Медлокала), поле `source=gmt-engineering.ru`.
 - Сайт открыт для индексации с 21.10.2026 (robots.txt Allow + Sitemap). На новых страницах НЕ ставить meta noindex (кроме 404). Права в Яндекс.Вебмастере — файл `yandex_a8a61f28343e64fc.html` в корне, не удалять.
-- Страницы услуг: `/uslugi/razrabotka-pribora/`, `/uslugi/skhemotekhnika/`, `/uslugi/proshivki/`, контакты `/kontakty/` — на `/assets/site.css` (классы `.page .sec .cards .split .box .formblk .frm`), JSON-LD Service + BreadcrumbList + FAQPage. Новую услугу добавлять в футер всех страниц (nav «Услуги»), в плитки главной и в `sitemap.xml`.
+- Страницы услуг: `/uslugi/razrabotka-pribora/`, `/uslugi/skhemotekhnika/`, `/uslugi/proshivki/`, `/uslugi/prikladnoe-po/`, `/uslugi/korpusa-prototipy/`; отрасль `/otrasli/medicinskie-pribory/`; приборы `/pribory/datchiki/`; контакты `/kontakty/` — на `/assets/site.css` (классы `.page .sec .cards .split .box .formblk .frm`), JSON-LD Service + BreadcrumbList + FAQPage. Новую услугу добавлять в футер всех страниц (nav «Услуги»), в плитки главной и в `sitemap.xml`.
 - Регистрация медизделий, ПП 719, ГИСП, локализация — это сайт med-local.ru. Здесь на них только ссылаемся.
 
 ## Как добавить статью в блог

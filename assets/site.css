@@ -190,3 +190,4 @@ form.frm{background:#fff;color:var(--graphite);border-radius:var(--r-lg);padding
   .sec{margin-top:56px}
   .acts .btn{width:100%}
 }
+.page .summary a{color:var(--cyan-text);text-decoration:underline}

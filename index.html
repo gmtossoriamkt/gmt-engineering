@@ -116,6 +116,7 @@ section.blk{padding:96px 0}
 
 .devs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .dev{border-radius:var(--r-lg);background:var(--navy);color:#fff;padding:28px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+a.dev:hover{background:#183A54}
 .dev svg{opacity:.9}
 .dev h3{font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
 .dev p{color:var(--soft);font-size:15px;margin-top:6px}
@@ -315,16 +316,18 @@ footer a:hover{color:#fff}
         <p>Прошивки для микроконтроллеров: драйверы, обработка сигналов, протоколы связи, обновление по воздуху.</p>
         <span class="go">Подробнее →</span>
       </a>
-      <article class="tile">
+      <a class="tile" href="/uslugi/prikladnoe-po/">
         <div class="ti"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h4M7 12h7"/></svg></div>
         <h3>Прикладное ПО к прибору</h3>
         <p>Программы настройки и диагностики, мобильные приложения, сбор данных в облако и панели мониторинга.</p>
-      </article>
-      <article class="tile">
+        <span class="go">Подробнее →</span>
+      </a>
+      <a class="tile" href="/uslugi/korpusa-prototipy/">
         <div class="ti"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div>
         <h3>Корпуса и прототипы</h3>
         <p>Корпус под условия эксплуатации, макеты и опытные образцы, конструкторская документация.</p>
-      </article>
+        <span class="go">Подробнее →</span>
+      </a>
       <article class="tile">
         <div class="ti"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Подготовка к сертификации</h3>
@@ -359,7 +362,7 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="inds">
-      <div class="ind"><b>Медицинские приборы</b><span>Диагностика, мониторинг, терапия</span></div>
+      <a class="ind" href="/otrasli/medicinskie-pribory/"><b>Медицинские приборы</b><span>Диагностика, мониторинг, терапия →</span></a>
       <div class="ind"><b>Промышленность и АСУ ТП</b><span>Контроллеры, датчики, протоколы</span></div>
       <div class="ind"><b>Лабораторное оборудование</b><span>Анализаторы, дозаторы, пробоподготовка</span></div>
       <div class="ind"><b>Энергетика и КИПиА</b><span>Учёт, телеметрия, защита</span></div>
@@ -390,10 +393,10 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="devs">
-      <div class="dev">
+      <a class="dev" href="/pribory/datchiki/">
         <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#7FD9D9" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="10"/><path d="M32 6v10M32 48v10M6 32h10M48 32h10M14 14l7 7M43 43l7 7M50 14l-7 7M21 43l-7 7"/></svg>
-        <div><h3>Датчики</h3><p>Температура, давление, газ, влажность, вибрация</p></div>
-      </div>
+        <div><h3>Датчики</h3><p>Температура, давление, газ, влажность, вибрация →</p></div>
+      </a>
       <div class="dev">
         <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#7FD9D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="14" width="48" height="36" rx="5"/><path d="M16 24h10M16 32h10M16 40h10M36 24h12M36 32h12M36 40h6"/></svg>
         <div><h3>Контроллеры</h3><p>Промышленные контроллеры и модули ввода-вывода</p></div>
@@ -486,10 +489,10 @@ footer a:hover{color:#fff}
       <span>ООО «Глобальные Медицинские Технологии»<br>ОГРН 1247700287834 · ИНН 9710131540</span>
     </div>
     <nav aria-label="Услуги"><ul>
-      <li><a href="/uslugi/razrabotka-pribora/">Разработка прибора под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы</a></li><li><a href="/uslugi/proshivki/">Разработка прошивок</a></li>
+      <li><a href="/uslugi/razrabotka-pribora/">Разработка прибора под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы</a></li><li><a href="/uslugi/proshivki/">Разработка прошивок</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО к прибору</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li>
     </ul></nav>
     <nav aria-label="Меню в подвале"><ul>
-      <li><a href="#industries">Отрасли</a></li><li><a href="#steps">Этапы работы</a></li><li><a href="#faq">Вопрос-ответ</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+      <li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/pribory/datchiki/">Разработка датчиков</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
     </ul></nav>
     <div style="display:flex;flex-direction:column;gap:8px">
       <a href="tel:+79853169104" style="color:#fff;font-weight:600;font-size:17px">+7 985 316-91-04</a>
