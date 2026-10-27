@@ -137,10 +137,10 @@
         <a href="mailto:info@gmt-engineering.ru"><small>Почта</small><strong>info@gmt-engineering.ru</strong></a>
       </div>
     </div>
-    <form class="frm" action="https://formspree.io/f/mrewovkk" method="POST" onsubmit="return sendLead(this)">
+    <form class="frm" action="https://functions.yandexcloud.net/FUNCTION_ID" method="POST" data-lead>
       <input type="hidden" name="_subject" value="Заявка с gmt-engineering.ru">
       <input type="hidden" name="source" value="gmt-engineering.ru">
-      <input type="hidden" name="page" value="">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div><label class="l" for="f-name">Имя и компания</label><input type="text" id="f-name" name="name" required autocomplete="organization" placeholder="Иван, ООО «Прибор»"></div>
       <div><label class="l" for="f-phone">Телефон</label><input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="+7 ..."></div>
       <fieldset>
@@ -153,7 +153,7 @@
         </div>
       </fieldset>
       <div><label class="l" for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: нужен датчик давления 0–10 бар с выходом 4–20 мА и RS-485, исполнение IP67"></textarea></div>
-      <div class="agree"><input type="checkbox" id="f-agree" required><label for="f-agree">Даю согласие на обработку персональных данных, включая трансграничную передачу (Formspree), в соответствии с <a href="/privacy/">Политикой конфиденциальности</a></label></div>
+      <div class="agree"><input type="checkbox" id="f-agree" name="consent_pd" value="on" required><label for="f-agree">Даю согласие на обработку персональных данных в соответствии с <a href="/privacy/">Политикой конфиденциальности</a></label></div>
       <button class="btn btn-cta" type="submit">Получить оценку</button>
       <div class="ok" role="status">Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.</div>
     </form>
@@ -183,15 +183,8 @@
   </div>
 </footer>
 
+<script src="/assets/leads.js" defer></script>
 <script>
-function sendLead(f){
-  var p=f.querySelector('input[name=page]');if(p)p.value=location.pathname;
-  var b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Отправляем…';
-  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-    .then(function(r){if(!r.ok)throw 0;Array.prototype.forEach.call(f.children,function(e){if(!e.classList.contains('ok')&&e.type!=='hidden')e.style.display='none'});f.querySelector('.ok').style.display='block';if(window.ym)ym(113710867,'reachGoal','lead')})
-    .catch(function(){b.disabled=false;b.textContent='Получить оценку';alert('Не удалось отправить. Позвоните нам: +7 985 316-91-04')});
-  return false;
-}
 document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.shell').classList.remove('open')})});
 </script>
 </body>
