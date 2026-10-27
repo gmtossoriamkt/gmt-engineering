@@ -7,6 +7,8 @@
 - Главная `index.html` держит стили у себя. Внутренние страницы (блог, статьи) подключают `/assets/site.css`.
 - Цвета брендбука: тёмно-синий `#102B3F`, циан `#00B3B3`, графит `#23272E`, светлый `#F5F7FA`. Шрифт Montserrat.
 - Контакты: +7 985 316-91-04, Telegram @tandelovtat, info@gmt-engineering.ru. Юрлицо ООО «Глобальные Медицинские Технологии», ОГРН 1247700287834, ИНН 9710131540.
+- Яндекс Метрика 113710867 подключается ТОЛЬКО через `<script src="/assets/cookie-consent.js" defer></script>` в `<head>` (запуск после «Принять» в плашке cookie). Код счётчика и noscript-пиксель в страницы не вставлять. В подвале — ссылка `data-cookie-settings` «Настройки cookie». Цель заявки — `ym(113710867,'reachGoal','lead')`.
+- Превью ссылок: `/assets/og-image.png` (1200×630) — og:image, og:site_name, twitter:card на каждой странице.
 - Форма заявок: Formspree `mrewovkk` (письма приходят в ящик Медлокала), поле `source=gmt-engineering.ru`.
 - Сайт открыт для индексации с 21.10.2026 (robots.txt Allow + Sitemap). На новых страницах НЕ ставить meta noindex (кроме 404). Права в Яндекс.Вебмастере — файл `yandex_a8a61f28343e64fc.html` в корне, не удалять.
 - Страницы услуг: `/uslugi/razrabotka-pribora/`, `/uslugi/skhemotekhnika/`, `/uslugi/proshivki/`, `/uslugi/prikladnoe-po/`, `/uslugi/korpusa-prototipy/`; отрасль `/otrasli/medicinskie-pribory/`; приборы `/pribory/datchiki/`; контакты `/kontakty/` — на `/assets/site.css` (классы `.page .sec .cards .split .box .formblk .frm`), JSON-LD Service + BreadcrumbList + FAQPage. Новую услугу добавлять в футер всех страниц (nav «Услуги»), в плитки главной и в `sitemap.xml`.
