@@ -8,7 +8,7 @@
 - Цвета брендбука: тёмно-синий `#102B3F`, циан `#00B3B3`, графит `#23272E`, светлый `#F5F7FA`. Шрифт Montserrat.
 - Контакты: +7 985 316-91-04, Telegram @tandelovtat, info@gmt-engineering.ru. Юрлицо ООО «Глобальные Медицинские Технологии», ОГРН 1247700287834, ИНН 9710131540.
 - Яндекс Метрика 113710867 подключается ТОЛЬКО через `<script src="/assets/cookie-consent.js" defer></script>` в `<head>` (запуск после «Принять» в плашке cookie). Код счётчика и noscript-пиксель в страницы не вставлять. В подвале — ссылка `data-cookie-settings` «Настройки cookie». Цель заявки — `ym(113710867,'reachGoal','lead')`.
-- Закреплённая шапка: `<script src="/assets/sticky-header.js" defer></script>` в `<head>` каждой страницы (кроме 404) — сразу после cookie-consent.js. Скрипт сам добавляет стили; шапку не дублировать вручную.
+- Закреплённая шапка: `<script src="/assets/sticky-header.js" defer></script>` в `<head>` каждой страницы (кроме 404) — сразу после cookie-consent.js. Скрипт сам добавляет стили; шапку не дублировать вручную. Он же показывает на телефонах плавающую кнопку Telegram (`.tg-float`).
 - Превью ссылок: `/assets/og-image.png` (1200×630) — og:image, og:site_name, twitter:card на каждой странице.
 - Форма заявок: `<form class="frm" action="https://functions.yandexcloud.net/d4epoq54usbmohm89fic" method="POST" data-lead>` + `/assets/leads.js` (JSON на функцию Яндекс Облака → письмо на info@gmt-engineering.ru через SMTP Timeweb; данные в РФ). Поля: name, phone, contact_way, task, `_subject`, `source=gmt-engineering.ru`, ловушка `_gotcha`, чекбокс `consent_pd=on`. Код функции в репозиторий не класть (репозиторий публичный).
 - Сайт открыт для индексации с 21.10.2026 (robots.txt Allow + Sitemap). На новых страницах НЕ ставить meta noindex (кроме 404). Права в Яндекс.Вебмастере — файл `yandex_a8a61f28343e64fc.html` в корне, не удалять.
@@ -25,6 +25,8 @@
 4. Добавить карточку первой в `blog/index.html` внутри `#posts`:
    `<a class="post" href="/blog/<slug>/" data-tags="<рубрика>"><span class="rub">Рубрика</span><h2>H1</h2><p>Описание</p><span class="foot"><span>21 октября 2026 · 10 мин</span><b>Читать →</b></span></a>`
 5. Добавить URL в `sitemap.xml`.
+6. На главной `index.html` в блоке «Свежие статьи» (`#blog`, `.lposts`) поставить новую статью первой карточкой `.lpost`, последнюю (третью) убрать.
+7. Поставить ссылку на статью в «Смотрите также» (`.rel`) профильных страниц услуг.
 
 Рубрики (`data-tags`, 1–2 через пробел): `razrabotka` — разработка железа, корпус, испытания (кластеры E, J); `po` — прошивки и прикладное ПО (F, G); `sert` — сертификация ТР ТС и метрология (A, B); `lokal` — локализация, реестры, госзакупки (C, D); `eaes` — ЕАЭС и экспорт (I); `otrasli` — отрасли (H); `trendy` — тренды (K).
 

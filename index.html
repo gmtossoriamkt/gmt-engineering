@@ -82,6 +82,16 @@ svg{display:block}
 
 /* ---------- sections ---------- */
 section.blk{padding:96px 0}
+.lposts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lpost{background:var(--bg);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:12px;min-height:260px;transition:.2s}
+.lpost:hover{background:#E9F6F6}
+.lpost .rub{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan-text)}
+.lpost h3{font-size:21px;line-height:1.25;font-weight:600;letter-spacing:-.02em;color:var(--navy)}
+.lpost p{color:var(--muted);font-size:15px}
+.lpost .foot{margin-top:auto;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+.lpost .foot b{color:var(--cyan-text);font-weight:600}
+@media (max-width:1180px){.lposts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.lposts{grid-template-columns:1fr}.lpost{min-height:0}}
 .h2{font-size:clamp(30px,3.6vw,52px);line-height:1.08;font-weight:600;letter-spacing:-.035em;color:var(--navy);max-width:900px}
 .sub{font-size:19px;color:var(--muted);margin-top:16px;max-width:720px}
 .head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px}
@@ -458,6 +468,24 @@ footer a:hover{color:#fff}
       <li><b>Испытания</b><span>Проверяем на соответствие ТЗ и нормам, исправляем замечания</span></li>
       <li><b>Документация и партия</b><span>Передаём комплект документации и готовим к серийному выпуску</span></li>
     </ol>
+  </div>
+</section>
+
+<section class="blk" id="blog" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2 class="h2">Свежие статьи</h2>
+        <p class="sub">Разбираем разработку, сертификацию и выход прибора на рынок — по шагам и со ссылками на нормативку.</p>
+      </div>
+      <a class="btn btn-navy" href="/blog/">Все статьи</a>
+    </div>
+    <!-- Три последние статьи блога: при публикации новой статьи добавить её первой, последнюю убрать -->
+    <div class="lposts">
+      <a class="lpost" href="/blog/tehreglamenty-na-pribory/"><span class="rub">Сертификация и метрология</span><h3>Какие техрегламенты ТР ТС действуют на электронные приборы: полная карта</h3><p>Матрица «признак прибора → техрегламент → форма оценки»: ЭМС, низковольтное оборудование, машины, взрывозащита, давление.</p><span class="foot"><span>28 октября 2026</span><b>Читать →</b></span></a>
+      <a class="lpost" href="/blog/sertifikaciya-ili-deklarirovanie/"><span class="rub">Сертификация и метрология</span><h3>Сертификация или декларирование: как вывести прибор на рынок ЕАЭС в 2026</h3><p>Нужен ли прибору сертификат или достаточно декларации, какие схемы применить и что изменилось в 2026 году.</p><span class="foot"><span>27 октября 2026</span><b>Читать →</b></span></a>
+      <a class="lpost" href="/blog/soft-dlya-pribora/"><span class="rub">Прошивки и ПО</span><h3>Софт к прибору: десктоп, мобайл, облако — что и когда нужно</h3><p>Как выбрать ПО под сценарии работы с прибором и что заложить в протокол обмена.</p><span class="foot"><span>26 октября 2026</span><b>Читать →</b></span></a>
+    </div>
   </div>
 </section>
 
