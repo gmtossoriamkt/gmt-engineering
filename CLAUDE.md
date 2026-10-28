@@ -8,6 +8,7 @@
 - Цвета брендбука: тёмно-синий `#102B3F`, циан `#00B3B3`, графит `#23272E`, светлый `#F5F7FA`. Шрифт Montserrat.
 - Контакты: +7 985 316-91-04, Telegram @tandelovtat, info@gmt-engineering.ru. Юрлицо ООО «Глобальные Медицинские Технологии», ОГРН 1247700287834, ИНН 9710131540.
 - Яндекс Метрика 113710867 подключается ТОЛЬКО через `<script src="/assets/cookie-consent.js" defer></script>` в `<head>` (запуск после «Принять» в плашке cookie). Код счётчика и noscript-пиксель в страницы не вставлять. В подвале — ссылка `data-cookie-settings` «Настройки cookie». Цель заявки — `ym(113710867,'reachGoal','lead')`.
+- Закреплённая шапка: `<script src="/assets/sticky-header.js" defer></script>` в `<head>` каждой страницы (кроме 404) — сразу после cookie-consent.js. Скрипт сам добавляет стили; шапку не дублировать вручную.
 - Превью ссылок: `/assets/og-image.png` (1200×630) — og:image, og:site_name, twitter:card на каждой странице.
 - Форма заявок: `<form class="frm" action="https://functions.yandexcloud.net/d4epoq54usbmohm89fic" method="POST" data-lead>` + `/assets/leads.js` (JSON на функцию Яндекс Облака → письмо на info@gmt-engineering.ru через SMTP Timeweb; данные в РФ). Поля: name, phone, contact_way, task, `_subject`, `source=gmt-engineering.ru`, ловушка `_gotcha`, чекбокс `consent_pd=on`. Код функции в репозиторий не класть (репозиторий публичный).
 - Сайт открыт для индексации с 21.10.2026 (robots.txt Allow + Sitemap). На новых страницах НЕ ставить meta noindex (кроме 404). Права в Яндекс.Вебмастере — файл `yandex_a8a61f28343e64fc.html` в корне, не удалять.
