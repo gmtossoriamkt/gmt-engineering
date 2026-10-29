@@ -21,6 +21,9 @@
     '@media (prefers-reduced-motion:reduce){.topbar.is-fixed{animation:none}}' +
     /* простая шапка (политика конфиденциальности) */
     'body>header{position:sticky;top:0;z-index:100}' +
+    /* шапка на средних экранах: плотнее отступы; если всё равно не помещается — меню сворачивается в кнопку */
+    '@media (min-width:1181px) and (max-width:1600px){.navpill{gap:24px!important;padding:0 22px!important}.navpill ul{gap:18px!important;font-size:14.5px!important}.contactpill{gap:10px!important;padding:0 8px 0 18px!important}.contactpill .tel{font-size:15px!important}.topbar>.btn{padding:0 22px!important;font-size:16px!important}}' +
+    '.shell.nav-compact .navpill ul{display:none!important}.shell.nav-compact .menu-btn{display:inline-flex!important}.shell.nav-compact .navpill{justify-content:space-between}' +
     /* плавающая кнопка Telegram — только на телефонах */
     '.tg-float{display:none}' +
     '@media (max-width:720px){.tg-float{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:140;display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 20px 0 16px;border-radius:999px;background:#00B3B3;color:#102B3F;font:600 15px/1 "Montserrat",system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 24px rgba(11,33,51,.3)}' +
@@ -63,6 +66,12 @@
       document.documentElement.style.setProperty('--sticky-h', Math.round(h) + 'px');
     }
 
+    // Если пункты меню не помещаются в шапку — сворачиваем меню в кнопку «☰» (как на телефоне)
+    function fit() {
+      shell.classList.remove('nav-compact');
+      if (window.innerWidth > 1180 && bar.scrollWidth > bar.clientWidth + 1) shell.classList.add('nav-compact');
+    }
+
     function update() {
       // граница — низ плашки в обычном положении (по заглушке, если плашка уже закреплена)
       var ref = fixed ? spacer : bar;
@@ -76,6 +85,7 @@
         fixed = shouldFix;
         bar.classList.toggle('is-fixed', fixed);
         shell.classList.toggle('has-fixed', fixed);
+        fit();
       }
       setVar();
     }
@@ -88,6 +98,7 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', function () {
+      fit();
       if (!fixed) naturalH = bar.offsetHeight;
       else spacer.style.height = naturalH + 'px';
       onScroll();
@@ -98,6 +109,8 @@
       a.addEventListener('click', function () { shell.classList.remove('open'); });
     });
 
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     update();
   }
 
