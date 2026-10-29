@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разработка анализаторов: лабораторных и портативных — ГМТ</title>
+<meta name="description" content="Разработка анализаторов: лабораторные и портативные, газоанализаторы, анализаторы жидкостей, оптические. Измерительный тракт, калибровка, ПО.">
+<link rel="canonical" href="https://gmt-engineering.ru/pribory/analizatory/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Разработка анализаторов: лабораторных и портативных — ГМТ">
+<meta property="og:description" content="Разработка анализаторов: лабораторные и портативные, газоанализаторы, анализаторы жидкостей, оптические. Измерительный тракт, калибровка, ПО.">
+<meta property="og:url" content="https://gmt-engineering.ru/pribory/analizatory/">
+<meta property="og:image" content="https://gmt-engineering.ru/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ГМТ Инжиниринг">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#102B3F">
+<link rel="preload" href="/assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Разработка анализаторов", "description": "Разработка анализаторов: лабораторные и портативные, газоанализаторы, анализаторы жидкостей, оптические. Измерительный тракт, калибровка, ПО.", "url": "https://gmt-engineering.ru/pribory/analizatory/", "serviceType": "Разработка анализаторов", "areaServed": "RU", "provider": {"@type": "Organization", "name": "ГМТ Инжиниринг", "legalName": "ООО «Глобальные Медицинские Технологии»", "url": "https://gmt-engineering.ru/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://gmt-engineering.ru/"}, {"@type": "ListItem", "position": 2, "name": "Анализаторы", "item": "https://gmt-engineering.ru/pribory/analizatory/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "С чего начинается разработка анализатора?", "acceptedAnswer": {"@type": "Answer", "text": "С метода измерения и требований к точности: что измеряем, в каком диапазоне, с какой погрешностью и в каких условиях. От этого зависят чувствительный элемент или оптика, измерительный тракт, пробоподготовка и калибровка. Проверяем выбранный метод на макете до разработки платы."}}, {"@type": "Question", "name": "Нужно ли утверждение типа средства измерений?", "acceptedAnswer": {"@type": "Answer", "text": "Если анализатор будет применяться для измерений в сфере государственного регулирования обеспечения единства измерений, по Федеральному закону № 102-ФЗ требуется утверждение типа. Это определяем на этапе ТЗ: от этого зависят требования к точности, калибровке, защите ПО и документации."}}, {"@type": "Question", "name": "Разрабатываете медицинские и лабораторные анализаторы для диагностики?", "acceptedAnswer": {"@type": "Answer", "text": "Да, электронику, механику и ПО таких анализаторов разрабатываем. Если анализатор предназначен для медицинской диагностики, он является медицинским изделием и требует государственной регистрации — её ведёт наш Инженерный центр med-local.ru. Подробнее — на странице «Разработка медицинских приборов»."}}, {"@type": "Question", "name": "Делаете ли пневматику и гидравлику анализатора?", "acceptedAnswer": {"@type": "Answer", "text": "Подбираем и интегрируем насосы, клапаны, датчики давления и расхода, проектируем управление ими в прошивке. Сложные механические узлы и пробоподготовку разрабатываем вместе с конструкцией корпуса."}}, {"@type": "Question", "name": "Как анализатор передаёт результаты?", "acceptedAnswer": {"@type": "Answer", "text": "По интерфейсу, который нужен заказчику: USB, Ethernet, RS-485, беспроводная связь. Делаем ПО для просмотра, хранения и выгрузки результатов и, если нужно, интеграцию с информационными системами лаборатории. Подробнее — в статье «Софт к прибору»."}}]}]}
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/sticky-header.js" defer></script>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <div class="navpill">
+      <a class="logo" href="/" aria-label="ГМТ Инжиниринг — на главную"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <nav aria-label="Основное меню"><ul>
+        <li><a href="/#services">Направления</a></li>
+        <li><a href="/#industries">Отрасли</a></li>
+        <li><a href="/#steps">Этапы работы</a></li>
+        <li><a href="/blog/">Блог</a></li>
+        <li><a href="/kontakty/">Контакты</a></li>
+      </ul></nav>
+      <button class="menu-btn" type="button" aria-label="Открыть меню" onclick="document.querySelector('.shell').classList.toggle('open')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <div class="contactpill">
+      <a class="tel" href="tel:+79853169104">+7 985 316-91-04</a>
+      <a class="ic" href="https://t.me/tandelovtat" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6L18.8 19.3c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-7.9c.4-.3-.1-.5-.6-.2L6.7 13.2 2 11.7c-1-.3-1-1 .2-1.5l18.3-7c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
+    </div>
+    <a class="btn btn-cta" href="#contact">Оценить проект</a>
+  </div>
+  <div class="mnav"><ul>
+    <li><a href="/uslugi/razrabotka-pribora/">Прибор под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и платы</a></li><li><a href="/uslugi/proshivki/">Прошивки</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li><li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li><li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    <li><a href="tel:+79853169104"><b>+7 985 316-91-04</b></a></li>
+  </ul></div>
+  <div class="pagehead">
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Анализаторы</span></nav>
+    <h1>Разработка анализаторов</h1>
+    <p class="lead">Лабораторные и портативные анализаторы: метод измерения, измерительный тракт, пробоподготовка, калибровка, ПО и документация для серии.</p>
+    <div class="acts"><a class="btn btn-cta" href="#contact">Оценить проект</a><a class="btn btn-ghost" href="https://t.me/tandelovtat" target="_blank" rel="noopener">Написать в Telegram</a></div>
+  </div>
+</div>
+
+<main class="wrap page">
+  <section class="sec">
+    <div class="summary"><strong>Коротко</strong>Разрабатываем анализаторы — лабораторные и портативные: от выбора метода измерения и чувствительного элемента до прошивки с калибровкой, ПО для обработки результатов и документации для серии. В анализаторе работают вместе электроника, оптика или сенсоры, пневматика или гидравлика и софт, поэтому все части ведёт одна команда.</div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Какие анализаторы разрабатываем</h2>
+    <div class="cards">
+        <div class="card"><span class="n">01</span><h3>Газоанализаторы</h3><p>Стационарные и портативные, контроль концентраций и сигнализация превышения порогов.</p></div>
+        <div class="card"><span class="n">02</span><h3>Анализаторы жидкостей</h3><p>Измерение параметров растворов и воды: электрохимические и кондуктометрические методы.</p></div>
+        <div class="card"><span class="n">03</span><h3>Оптические анализаторы</h3><p>Фотометрия и спектральные методы: источник, оптический тракт, приёмник, обработка сигнала.</p></div>
+        <div class="card"><span class="n">04</span><h3>Портативные приборы</h3><p>Питание от аккумулятора, малые габариты, хранение и передача результатов.</p></div>
+        <div class="card"><span class="n">05</span><h3>Лабораторное оборудование</h3><p>Настольные анализаторы с пробоподготовкой, дозированием и автоматизацией.</p></div>
+        <div class="card"><span class="n">06</span><h3>Модернизация</h3><p>Новая электроника и ПО для существующего анализатора, замена недоступных компонентов.</p></div>
+      </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Из чего складывается разработка</h2>
+    <div class="split">
+      <div class="box"><h3>Измерения</h3><ul><li>Выбор метода и чувствительного элемента под диапазон и погрешность</li><li>Малошумящий измерительный тракт: усиление, фильтрация, АЦП</li><li>Термостабилизация и температурная компенсация</li><li>Калибровка: методика, хранение коэффициентов, поверочные режимы</li><li>Проверка достижимой точности на макете</li></ul></div>
+      <div class="box"><h3>Прибор целиком</h3><ul><li>Пневматика или гидравлика: насосы, клапаны, датчики расхода</li><li>Прошивка: управление циклом измерения, обработка, журнал</li><li>ПО для просмотра, хранения и выгрузки результатов</li><li>Корпус с учётом пробоподготовки и обслуживания</li><li>Документация для серии и метрологии</li></ul></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Как проходит работа</h2>
+    <div class="tbl"><table>
+<thead><tr><th>Этап</th><th>Что делаем</th><th>Результат</th></tr></thead>
+<tbody>
+<tr><td>1. Метод и требования</td><td>Измеряемые параметры, диапазоны, погрешность, условия, нормативные требования</td><td>ТЗ на анализатор</td></tr>
+<tr><td>2. Макет</td><td>Проверяем метод, чувствительный элемент и измерительный тракт</td><td>Подтверждение достижимой точности</td></tr>
+<tr><td>3. Разработка</td><td>Схема, плата, прошивка, пневматика или гидравлика, корпус</td><td>Опытный образец</td></tr>
+<tr><td>4. Калибровка и проверки</td><td>Калибруем по эталонам, проверяем в диапазоне условий</td><td>Протоколы проверок</td></tr>
+<tr><td>5. ПО и интеграция</td><td>Программа обработки и хранения результатов, обмен с внешними системами</td><td>Готовое ПО</td></tr>
+<tr><td>6. Подготовка к серии</td><td>Документация, методика калибровки на производстве</td><td>Комплект для выпуска и метрологии</td></tr>
+</tbody>
+</table></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Требования, которые учитываем</h2>
+    <div class="tbl"><table>
+<thead><tr><th>Документ</th><th>Когда важен</th></tr></thead>
+<tbody>
+<tr><td>ГОСТ IEC 61010-1-2014</td><td>Безопасность электрических контрольно-измерительных приборов и лабораторного оборудования</td></tr>
+<tr><td>ТР ТС 020/2011</td><td>Электромагнитная совместимость</td></tr>
+<tr><td>ТР ТС 004/2011 или ТР ТС 010/2011</td><td>Безопасность: по 004 — при сетевом питании; по 010 — если анализатор относится к машинам и оборудованию</td></tr>
+<tr><td>Федеральный закон № 102-ФЗ</td><td>Утверждение типа, если анализатор — средство измерений в сфере государственного регулирования</td></tr>
+<tr><td>ТР ТС 012/2011</td><td>Газоанализаторы для взрывоопасных зон — только сертификация</td></tr>
+</tbody>
+</table></div>
+    <div class="note">Анализаторы для медицинской диагностики — медицинские изделия: им нужна государственная регистрация, её ведёт наш <a href="https://med-local.ru" target="_blank" rel="noopener">Инженерный центр</a>.</div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Вопросы и ответы</h2>
+    <div class="faq">
+        <details><summary>С чего начинается разработка анализатора?</summary><p>С метода измерения и требований к точности: что измеряем, в каком диапазоне, с какой погрешностью и в каких условиях. От этого зависят чувствительный элемент или оптика, измерительный тракт, пробоподготовка и калибровка. Проверяем выбранный метод на макете до разработки платы.</p></details>
+        <details><summary>Нужно ли утверждение типа средства измерений?</summary><p>Если анализатор будет применяться для измерений в сфере государственного регулирования обеспечения единства измерений, по Федеральному закону № 102-ФЗ требуется утверждение типа. Это определяем на этапе ТЗ: от этого зависят требования к точности, калибровке, защите ПО и документации.</p></details>
+        <details><summary>Разрабатываете медицинские и лабораторные анализаторы для диагностики?</summary><p>Да, электронику, механику и ПО таких анализаторов разрабатываем. Если анализатор предназначен для медицинской диагностики, он является медицинским изделием и требует государственной регистрации — её ведёт наш Инженерный центр <a href="https://med-local.ru" target="_blank" rel="noopener">med-local.ru</a>. Подробнее — на странице <a href="/otrasli/medicinskie-pribory/">«Разработка медицинских приборов»</a>.</p></details>
+        <details><summary>Делаете ли пневматику и гидравлику анализатора?</summary><p>Подбираем и интегрируем насосы, клапаны, датчики давления и расхода, проектируем управление ими в прошивке. Сложные механические узлы и пробоподготовку разрабатываем вместе с конструкцией корпуса.</p></details>
+        <details><summary>Как анализатор передаёт результаты?</summary><p>По интерфейсу, который нужен заказчику: USB, Ethernet, RS-485, беспроводная связь. Делаем ПО для просмотра, хранения и выгрузки результатов и, если нужно, интеграцию с информационными системами лаборатории. Подробнее — в статье <a href="/blog/soft-dlya-pribora/">«Софт к прибору»</a>.</p></details>
+      </div>
+  </section>
+
+  <section class="sec"><h2 class="h2s">Смотрите также</h2><div class="rel" style="margin-top:28px"><a href="/pribory/datchiki/">Разработка датчиков<span>Направление</span></a><a href="/uslugi/prikladnoe-po/">Прикладное ПО к прибору<span>Услуга</span></a><a href="/otrasli/medicinskie-pribory/">Разработка медицинских приборов<span>Отрасль</span></a><a href="/blog/tehreglamenty-na-pribory/">Какие техрегламенты ТР ТС действуют на электронные приборы<span>Статья в блоге</span></a><a href="/blog/soft-dlya-pribora/">Софт к прибору: десктоп, мобайл, облако<span>Статья в блоге</span></a><a href="/blog/razrabotka-pribora-pod-klyuch/">Разработка прибора под ключ: маршрут от идеи до серии<span>Статья в блоге</span></a></div></section>
+</main>
+
+<section class="formblk" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="h2s">Оценим ваш проект</h2>
+      <p class="subs">Опишите, что должен делать прибор и на каком этапе проект. Свяжемся, уточним детали и предложим следующий шаг. NDA подписываем до передачи технической информации.</p>
+      <div class="cinfo">
+        <a href="tel:+79853169104"><small>Телефон</small><strong>+7 985 316-91-04</strong></a>
+        <a href="https://t.me/tandelovtat" target="_blank" rel="noopener"><small>Telegram</small><strong>@tandelovtat</strong></a>
+        <a href="mailto:info@gmt-engineering.ru"><small>Почта</small><strong>info@gmt-engineering.ru</strong></a>
+      </div>
+    </div>
+    <form class="frm" action="https://functions.yandexcloud.net/d4epoq54usbmohm89fic" method="POST" data-lead>
+      <input type="hidden" name="_subject" value="Заявка с gmt-engineering.ru">
+      <input type="hidden" name="source" value="gmt-engineering.ru">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <div><label class="l" for="f-name">Имя и компания</label><input type="text" id="f-name" name="name" required autocomplete="organization" placeholder="Иван, ООО «Прибор»"></div>
+      <div><label class="l" for="f-phone">Телефон</label><input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="+7 ..."></div>
+      <fieldset>
+        <legend>Как удобнее связаться</legend>
+        <div class="ways">
+          <label><input type="radio" name="contact_way" value="Звонок" checked><span>Звонок</span></label>
+          <label><input type="radio" name="contact_way" value="Telegram"><span>Telegram</span></label>
+          <label><input type="radio" name="contact_way" value="WhatsApp"><span>WhatsApp</span></label>
+          <label><input type="radio" name="contact_way" value="Почта"><span>Почта</span></label>
+        </div>
+      </fieldset>
+      <div><label class="l" for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: портативный газоанализатор на 4 газа с аккумулятором и выгрузкой данных по USB"></textarea></div>
+      <div class="agree"><input type="checkbox" id="f-agree" name="consent_pd" value="on" required><label for="f-agree">Даю согласие на обработку персональных данных в соответствии с <a href="/privacy/">Политикой конфиденциальности</a></label></div>
+      <button class="btn btn-cta" type="submit">Получить оценку</button>
+      <div class="ok" role="status">Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="max-width:420px;display:flex;flex-direction:column;gap:14px">
+      <a class="logo" href="/"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <span>Разработка приборов и электроники под ключ</span>
+      <span>ООО «Глобальные Медицинские Технологии»<br>ОГРН 1247700287834 · ИНН 9710131540</span>
+    </div>
+    <nav aria-label="Услуги"><ul>
+      <li><a href="/uslugi/razrabotka-pribora/">Разработка прибора под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы</a></li><li><a href="/uslugi/proshivki/">Разработка прошивок</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО к прибору</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li>
+    </ul></nav>
+    <nav aria-label="Направления"><ul>
+      <li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li>
+    </ul></nav>
+    <nav aria-label="Меню в подвале"><ul>
+      <li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    </ul></nav>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <a href="tel:+79853169104" style="color:#fff;font-weight:600;font-size:17px">+7 985 316-91-04</a>
+      <a href="https://t.me/tandelovtat" target="_blank" rel="noopener">Telegram: @tandelovtat</a>
+      <a href="mailto:info@gmt-engineering.ru">info@gmt-engineering.ru</a>
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/privacy/#cookies" data-cookie-settings>Настройки cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/leads.js" defer></script>
+<script>
+document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.shell').classList.remove('open')})});
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Электроника для промышленности и АСУ ТП — ГМТ Инжиниринг</title>
+<meta name="description" content="Электроника для промышленности и АСУ ТП: контроллеры, модули ввода-вывода, датчики, шлюзы и телеметрия. Modbus, CAN, Ethernet, ЭМС, взрывозащита.">
+<link rel="canonical" href="https://gmt-engineering.ru/otrasli/promyshlennost/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Электроника для промышленности и АСУ ТП — ГМТ Инжиниринг">
+<meta property="og:description" content="Электроника для промышленности и АСУ ТП: контроллеры, модули ввода-вывода, датчики, шлюзы и телеметрия. Modbus, CAN, Ethernet, ЭМС, взрывозащита.">
+<meta property="og:url" content="https://gmt-engineering.ru/otrasli/promyshlennost/">
+<meta property="og:image" content="https://gmt-engineering.ru/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ГМТ Инжиниринг">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#102B3F">
+<link rel="preload" href="/assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Разработка электроники для промышленности и АСУ ТП", "description": "Электроника для промышленности и АСУ ТП: контроллеры, модули ввода-вывода, датчики, шлюзы и телеметрия. Modbus, CAN, Ethernet, ЭМС, взрывозащита.", "url": "https://gmt-engineering.ru/otrasli/promyshlennost/", "serviceType": "Разработка электроники для промышленности и АСУ ТП", "areaServed": "RU", "provider": {"@type": "Organization", "name": "ГМТ Инжиниринг", "legalName": "ООО «Глобальные Медицинские Технологии»", "url": "https://gmt-engineering.ru/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://gmt-engineering.ru/"}, {"@type": "ListItem", "position": 2, "name": "Промышленность и АСУ ТП", "item": "https://gmt-engineering.ru/otrasli/promyshlennost/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что важно учесть в электронике для промышленности?", "acceptedAnswer": {"@type": "Answer", "text": "Помехи от силового оборудования, широкий диапазон температур, вибрацию, пыль и влагу, долгий срок службы и доступность компонентов на годы вперёд. Эти требования закладываем в ТЗ — от них зависят схема, трассировка, выбор компонентов и корпус."}}, {"@type": "Question", "name": "Интегрируете устройства в существующую АСУ ТП?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Устройство разрабатываем под протоколы и интерфейсы вашей системы — как правило, Modbus RTU по RS-485 или Modbus TCP по Ethernet, — и проверяем обмен с вашим оборудованием или SCADA до передачи в серию."}}, {"@type": "Question", "name": "Делаете оборудование для взрывоопасных зон?", "acceptedAnswer": {"@type": "Answer", "text": "Да, требования ТР ТС 012/2011 закладываем с ТЗ: они определяют схему, конструкцию и подтверждение соответствия — по этому регламенту только сертификация. Подробнее — в статье «Какие техрегламенты действуют на электронные приборы»."}}, {"@type": "Question", "name": "Можно заменить импортное устройство своим?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Разбираем функции и интерфейсы существующего устройства, требования к совместимости, и разрабатываем аналог на доступных компонентах — с тем же протоколом обмена, чтобы его можно было поставить без переделки системы."}}, {"@type": "Question", "name": "Как обеспечиваете долгую доступность компонентов?", "acceptedAnswer": {"@type": "Answer", "text": "Выбираем компоненты с длительным жизненным циклом и несколькими поставщиками, закладываем аналоги для критичных позиций и проверяем сроки поставки до начала серии."}}]}]}
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/sticky-header.js" defer></script>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <div class="navpill">
+      <a class="logo" href="/" aria-label="ГМТ Инжиниринг — на главную"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <nav aria-label="Основное меню"><ul>
+        <li><a href="/#services">Направления</a></li>
+        <li><a href="/#industries">Отрасли</a></li>
+        <li><a href="/#steps">Этапы работы</a></li>
+        <li><a href="/blog/">Блог</a></li>
+        <li><a href="/kontakty/">Контакты</a></li>
+      </ul></nav>
+      <button class="menu-btn" type="button" aria-label="Открыть меню" onclick="document.querySelector('.shell').classList.toggle('open')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <div class="contactpill">
+      <a class="tel" href="tel:+79853169104">+7 985 316-91-04</a>
+      <a class="ic" href="https://t.me/tandelovtat" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6L18.8 19.3c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-7.9c.4-.3-.1-.5-.6-.2L6.7 13.2 2 11.7c-1-.3-1-1 .2-1.5l18.3-7c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
+    </div>
+    <a class="btn btn-cta" href="#contact">Оценить проект</a>
+  </div>
+  <div class="mnav"><ul>
+    <li><a href="/uslugi/razrabotka-pribora/">Прибор под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и платы</a></li><li><a href="/uslugi/proshivki/">Прошивки</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li><li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li><li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    <li><a href="tel:+79853169104"><b>+7 985 316-91-04</b></a></li>
+  </ul></div>
+  <div class="pagehead">
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Промышленность и АСУ ТП</span></nav>
+    <h1>Электроника для промышленности и АСУ ТП</h1>
+    <p class="lead">Контроллеры, модули ввода-вывода, датчики и телеметрия — с учётом помех, температуры, вибрации и интеграции с вашей АСУ ТП.</p>
+    <div class="acts"><a class="btn btn-cta" href="#contact">Оценить проект</a><a class="btn btn-ghost" href="https://t.me/tandelovtat" target="_blank" rel="noopener">Написать в Telegram</a></div>
+  </div>
+</div>
+
+<main class="wrap page">
+  <section class="sec">
+    <div class="summary"><strong>Коротко</strong>Разрабатываем электронику для промышленных предприятий и систем автоматизации: контроллеры, модули ввода-вывода, датчики и преобразователи, шлюзы и устройства телеметрии. Учитываем то, что отличает промышленность: помехи от силового оборудования, температуру и вибрацию, интеграцию с существующей АСУ ТП и долгий срок выпуска изделия.</div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Что разрабатываем</h2>
+    <div class="cards">
+        <a class="card" href="/pribory/kontrollery/"><span class="n">01</span><h3>Контроллеры</h3><p>Управление технологическим оборудованием и установками.</p><b>Подробнее →</b></a>
+        <div class="card"><span class="n">02</span><h3>Модули ввода-вывода</h3><p>Дискретные и аналоговые входы и выходы для расширения систем.</p></div>
+        <a class="card" href="/pribory/datchiki/"><span class="n">03</span><h3>Датчики и преобразователи</h3><p>Температура, давление, вибрация, уровень — с выходом 4–20 мА или цифровым.</p><b>Подробнее →</b></a>
+        <div class="card"><span class="n">04</span><h3>Шлюзы и телеметрия</h3><p>Сбор данных с оборудования и передача на сервер, в SCADA или облако.</p></div>
+        <div class="card"><span class="n">05</span><h3>Мониторинг оборудования</h3><p>Контроль состояния: вибрация, температура, токи — с предупреждением о неисправностях.</p></div>
+        <div class="card"><span class="n">06</span><h3>Замена импортных устройств</h3><p>Аналоги на доступных компонентах с совместимым протоколом обмена.</p></div>
+      </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Особенности промышленной электроники</h2>
+    <div class="split">
+      <div class="box"><h3>Условия эксплуатации</h3><ul><li>Помехи от частотных приводов, контакторов, сварки</li><li>Расширенный диапазон температур и климатическое исполнение</li><li>Вибрация, пыль, влага — степень защиты корпуса</li><li>Питание 24 В с бросками и провалами напряжения</li><li>Монтаж на DIN-рейку в шкаф автоматики</li></ul></div>
+      <div class="box"><h3>Интеграция и жизненный цикл</h3><ul><li>Протоколы: Modbus RTU и TCP, CAN, Ethernet и др.</li><li>Совместимость с существующей АСУ ТП и SCADA</li><li>Диагностика и удалённое обновление</li><li>Компоненты с длительным жизненным циклом</li><li>Документация для серийного выпуска и обслуживания</li></ul></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Требования, которые учитываем</h2>
+    <div class="tbl"><table>
+<thead><tr><th>Документ</th><th>Когда важен</th></tr></thead>
+<tbody>
+<tr><td>ТР ТС 020/2011</td><td>Электромагнитная совместимость — для большинства промышленных устройств</td></tr>
+<tr><td>ТР ТС 012/2011</td><td>Оборудование для взрывоопасных сред — только сертификация</td></tr>
+<tr><td>ТР ТС 010/2011</td><td>Машины и оборудование; изменения вступают в силу с 1 сентября 2026 года</td></tr>
+<tr><td>ГОСТ IEC 61131-2-2012</td><td>Программируемые контроллеры: требования к оборудованию и испытания</td></tr>
+<tr><td>ГОСТ 14254-2015</td><td>Степень защиты корпуса (код IP)</td></tr>
+<tr><td>ГОСТ 15150-69</td><td>Климатическое исполнение и условия эксплуатации</td></tr>
+</tbody>
+</table></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Вопросы и ответы</h2>
+    <div class="faq">
+        <details><summary>Что важно учесть в электронике для промышленности?</summary><p>Помехи от силового оборудования, широкий диапазон температур, вибрацию, пыль и влагу, долгий срок службы и доступность компонентов на годы вперёд. Эти требования закладываем в ТЗ — от них зависят схема, трассировка, выбор компонентов и корпус.</p></details>
+        <details><summary>Интегрируете устройства в существующую АСУ ТП?</summary><p>Да. Устройство разрабатываем под протоколы и интерфейсы вашей системы — как правило, Modbus RTU по RS-485 или Modbus TCP по Ethernet, — и проверяем обмен с вашим оборудованием или SCADA до передачи в серию.</p></details>
+        <details><summary>Делаете оборудование для взрывоопасных зон?</summary><p>Да, требования ТР ТС 012/2011 закладываем с ТЗ: они определяют схему, конструкцию и подтверждение соответствия — по этому регламенту только сертификация. Подробнее — в статье <a href="/blog/tehreglamenty-na-pribory/">«Какие техрегламенты действуют на электронные приборы»</a>.</p></details>
+        <details><summary>Можно заменить импортное устройство своим?</summary><p>Да. Разбираем функции и интерфейсы существующего устройства, требования к совместимости, и разрабатываем аналог на доступных компонентах — с тем же протоколом обмена, чтобы его можно было поставить без переделки системы.</p></details>
+        <details><summary>Как обеспечиваете долгую доступность компонентов?</summary><p>Выбираем компоненты с длительным жизненным циклом и несколькими поставщиками, закладываем аналоги для критичных позиций и проверяем сроки поставки до начала серии.</p></details>
+      </div>
+  </section>
+
+  <section class="sec"><h2 class="h2s">Смотрите также</h2><div class="rel" style="margin-top:28px"><a href="/pribory/kontrollery/">Разработка контроллеров<span>Направление</span></a><a href="/pribory/datchiki/">Разработка датчиков<span>Направление</span></a><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы<span>Услуга</span></a><a href="/blog/tehreglamenty-na-pribory/">Какие техрегламенты ТР ТС действуют на электронные приборы<span>Статья в блоге</span></a><a href="/blog/sertifikaciya-ili-deklarirovanie/">Сертификация или декларирование: как вывести прибор на рынок ЕАЭС<span>Статья в блоге</span></a><a href="/blog/soft-dlya-pribora/">Софт к прибору: десктоп, мобайл, облако<span>Статья в блоге</span></a></div></section>
+</main>
+
+<section class="formblk" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="h2s">Оценим ваш проект</h2>
+      <p class="subs">Опишите, что должен делать прибор и на каком этапе проект. Свяжемся, уточним детали и предложим следующий шаг. NDA подписываем до передачи технической информации.</p>
+      <div class="cinfo">
+        <a href="tel:+79853169104"><small>Телефон</small><strong>+7 985 316-91-04</strong></a>
+        <a href="https://t.me/tandelovtat" target="_blank" rel="noopener"><small>Telegram</small><strong>@tandelovtat</strong></a>
+        <a href="mailto:info@gmt-engineering.ru"><small>Почта</small><strong>info@gmt-engineering.ru</strong></a>
+      </div>
+    </div>
+    <form class="frm" action="https://functions.yandexcloud.net/d4epoq54usbmohm89fic" method="POST" data-lead>
+      <input type="hidden" name="_subject" value="Заявка с gmt-engineering.ru">
+      <input type="hidden" name="source" value="gmt-engineering.ru">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <div><label class="l" for="f-name">Имя и компания</label><input type="text" id="f-name" name="name" required autocomplete="organization" placeholder="Иван, ООО «Прибор»"></div>
+      <div><label class="l" for="f-phone">Телефон</label><input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="+7 ..."></div>
+      <fieldset>
+        <legend>Как удобнее связаться</legend>
+        <div class="ways">
+          <label><input type="radio" name="contact_way" value="Звонок" checked><span>Звонок</span></label>
+          <label><input type="radio" name="contact_way" value="Telegram"><span>Telegram</span></label>
+          <label><input type="radio" name="contact_way" value="WhatsApp"><span>WhatsApp</span></label>
+          <label><input type="radio" name="contact_way" value="Почта"><span>Почта</span></label>
+        </div>
+      </fieldset>
+      <div><label class="l" for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: шлюз для сбора данных с 20 датчиков по Modbus RTU и передачи в SCADA по Ethernet"></textarea></div>
+      <div class="agree"><input type="checkbox" id="f-agree" name="consent_pd" value="on" required><label for="f-agree">Даю согласие на обработку персональных данных в соответствии с <a href="/privacy/">Политикой конфиденциальности</a></label></div>
+      <button class="btn btn-cta" type="submit">Получить оценку</button>
+      <div class="ok" role="status">Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="max-width:420px;display:flex;flex-direction:column;gap:14px">
+      <a class="logo" href="/"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <span>Разработка приборов и электроники под ключ</span>
+      <span>ООО «Глобальные Медицинские Технологии»<br>ОГРН 1247700287834 · ИНН 9710131540</span>
+    </div>
+    <nav aria-label="Услуги"><ul>
+      <li><a href="/uslugi/razrabotka-pribora/">Разработка прибора под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы</a></li><li><a href="/uslugi/proshivki/">Разработка прошивок</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО к прибору</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li>
+    </ul></nav>
+    <nav aria-label="Направления"><ul>
+      <li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li>
+    </ul></nav>
+    <nav aria-label="Меню в подвале"><ul>
+      <li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    </ul></nav>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <a href="tel:+79853169104" style="color:#fff;font-weight:600;font-size:17px">+7 985 316-91-04</a>
+      <a href="https://t.me/tandelovtat" target="_blank" rel="noopener">Telegram: @tandelovtat</a>
+      <a href="mailto:info@gmt-engineering.ru">info@gmt-engineering.ru</a>
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/privacy/#cookies" data-cookie-settings>Настройки cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/leads.js" defer></script>
+<script>
+document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.shell').classList.remove('open')})});
+</script>
+</body>
+</html>

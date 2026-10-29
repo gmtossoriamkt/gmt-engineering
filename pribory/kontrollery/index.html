@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Разработка контроллеров и модулей ввода-вывода — ГМТ</title>
+<meta name="description" content="Разработка контроллеров и модулей ввода-вывода: входы 4–20 мА и дискретные, RS-485/Modbus, Ethernet, CAN, питание 24 В, DIN-рейка, прошивка и конфигуратор.">
+<link rel="canonical" href="https://gmt-engineering.ru/pribory/kontrollery/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Разработка контроллеров и модулей ввода-вывода — ГМТ">
+<meta property="og:description" content="Разработка контроллеров и модулей ввода-вывода: входы 4–20 мА и дискретные, RS-485/Modbus, Ethernet, CAN, питание 24 В, DIN-рейка, прошивка и конфигуратор.">
+<meta property="og:url" content="https://gmt-engineering.ru/pribory/kontrollery/">
+<meta property="og:image" content="https://gmt-engineering.ru/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ГМТ Инжиниринг">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#102B3F">
+<link rel="preload" href="/assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Разработка контроллеров", "description": "Разработка контроллеров и модулей ввода-вывода: входы 4–20 мА и дискретные, RS-485/Modbus, Ethernet, CAN, питание 24 В, DIN-рейка, прошивка и конфигуратор.", "url": "https://gmt-engineering.ru/pribory/kontrollery/", "serviceType": "Разработка контроллеров", "areaServed": "RU", "provider": {"@type": "Organization", "name": "ГМТ Инжиниринг", "legalName": "ООО «Глобальные Медицинские Технологии»", "url": "https://gmt-engineering.ru/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://gmt-engineering.ru/"}, {"@type": "ListItem", "position": 2, "name": "Контроллеры", "item": "https://gmt-engineering.ru/pribory/kontrollery/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем ваш контроллер лучше готового серийного?", "acceptedAnswer": {"@type": "Answer", "text": "Готовый контроллер выгоднее, если он закрывает задачу. Свой имеет смысл, когда нужен особый набор входов и выходов, нестандартный протокол, габариты, условия эксплуатации или цена в серии, которую готовые решения не дают. Это оцениваем на этапе ТЗ."}}, {"@type": "Question", "name": "Какие протоколы связи поддерживаете?", "acceptedAnswer": {"@type": "Answer", "text": "Протоколы выбираем под систему, в которую встраивается контроллер: как правило, это Modbus RTU по RS-485, Modbus TCP по Ethernet, CAN, а для удалённых объектов — беспроводная связь и передача данных на сервер. Если нужен протокол заказчика, реализуем его по описанию."}}, {"@type": "Question", "name": "Пишете ли вы программу для пользователя контроллера?", "acceptedAnswer": {"@type": "Answer", "text": "Делаем прошивку контроллера и, если нужно, конфигуратор для ПК: настройка входов и выходов, параметров связи, диагностика и обновление. Подробнее — на странице «Прикладное ПО к прибору»."}}, {"@type": "Question", "name": "Какие требования применимы к промышленному контроллеру?", "acceptedAnswer": {"@type": "Answer", "text": "Как правило, ТР ТС 020/2011 по электромагнитной совместимости, а при питании от сети — ТР ТС 004/2011. Для программируемых контроллеров есть ГОСТ IEC 61131-2-2012 с требованиями к оборудованию и испытаниям. Полная карта — в статье «Какие техрегламенты действуют на электронные приборы»."}}, {"@type": "Question", "name": "Можно доработать контроллер, который уже выпускается?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Начинаем с разбора схемы, платы и прошивки: что можно улучшить, какие компоненты заменить на доступные, что добавить. По итогам — список доработок и новая ревизия."}}]}]}
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/sticky-header.js" defer></script>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <div class="navpill">
+      <a class="logo" href="/" aria-label="ГМТ Инжиниринг — на главную"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <nav aria-label="Основное меню"><ul>
+        <li><a href="/#services">Направления</a></li>
+        <li><a href="/#industries">Отрасли</a></li>
+        <li><a href="/#steps">Этапы работы</a></li>
+        <li><a href="/blog/">Блог</a></li>
+        <li><a href="/kontakty/">Контакты</a></li>
+      </ul></nav>
+      <button class="menu-btn" type="button" aria-label="Открыть меню" onclick="document.querySelector('.shell').classList.toggle('open')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <div class="contactpill">
+      <a class="tel" href="tel:+79853169104">+7 985 316-91-04</a>
+      <a class="ic" href="https://t.me/tandelovtat" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6L18.8 19.3c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-7.9c.4-.3-.1-.5-.6-.2L6.7 13.2 2 11.7c-1-.3-1-1 .2-1.5l18.3-7c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
+    </div>
+    <a class="btn btn-cta" href="#contact">Оценить проект</a>
+  </div>
+  <div class="mnav"><ul>
+    <li><a href="/uslugi/razrabotka-pribora/">Прибор под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и платы</a></li><li><a href="/uslugi/proshivki/">Прошивки</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li><li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li><li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    <li><a href="tel:+79853169104"><b>+7 985 316-91-04</b></a></li>
+  </ul></div>
+  <div class="pagehead">
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Контроллеры</span></nav>
+    <h1>Разработка контроллеров</h1>
+    <p class="lead">Промышленные контроллеры, модули ввода-вывода и управляющие платы приборов: схема, плата, прошивка, конфигуратор и корпус под DIN-рейку.</p>
+    <div class="acts"><a class="btn btn-cta" href="#contact">Оценить проект</a><a class="btn btn-ghost" href="https://t.me/tandelovtat" target="_blank" rel="noopener">Написать в Telegram</a></div>
+  </div>
+</div>
+
+<main class="wrap page">
+  <section class="sec">
+    <div class="summary"><strong>Коротко</strong>Разрабатываем контроллеры и модули ввода-вывода под задачу: промышленные, для управления оборудованием и встраиваемые в приборы. Схема, плата, прошивка, конфигуратор и корпус — в одной команде. Защиту входов, гальваническую развязку и требования ЭМС закладываем с самого начала, чтобы контроллер надёжно работал в шкафу автоматики рядом с силовым оборудованием.</div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Какие контроллеры разрабатываем</h2>
+    <div class="cards">
+        <div class="card"><span class="n">01</span><h3>Промышленные контроллеры</h3><p>Управление технологическим оборудованием, установка на DIN-рейку в шкаф автоматики.</p></div>
+        <div class="card"><span class="n">02</span><h3>Модули ввода-вывода</h3><p>Расширение входов и выходов существующих систем по RS-485, Ethernet или CAN.</p></div>
+        <div class="card"><span class="n">03</span><h3>Контроллеры оборудования</h3><p>Встраиваемая электроника управления станками, установками, стендами.</p></div>
+        <div class="card"><span class="n">04</span><h3>Контроллеры приборов</h3><p>Управляющая плата измерительного или лабораторного прибора.</p></div>
+        <div class="card"><span class="n">05</span><h3>Шлюзы и телеметрия</h3><p>Сбор данных с датчиков и оборудования и передача на сервер или в SCADA.</p></div>
+        <div class="card"><span class="n">06</span><h3>Доработка и импортозамещение</h3><p>Новая ревизия существующего контроллера на доступных компонентах.</p></div>
+      </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Из чего складывается разработка</h2>
+    <div class="split">
+      <div class="box"><h3>Аппаратная часть</h3><ul><li>Входы: дискретные, аналоговые 4–20 мА и 0–10 В, термосопротивления и термопары</li><li>Выходы: реле, транзисторные, аналоговые</li><li>Интерфейсы: RS-485, Ethernet, CAN, USB, беспроводные</li><li>Питание 24 В, защита от переполюсовки и перенапряжений</li><li>Гальваническая развязка входов и интерфейсов</li></ul></div>
+      <div class="box"><h3>Прошивка и ПО</h3><ul><li>Логика управления и обработка сигналов</li><li>Протоколы: Modbus RTU и TCP, CAN или протокол заказчика</li><li>Диагностика, журнал событий, сторожевой таймер</li><li>Обновление прошивки без вскрытия корпуса</li><li>Конфигуратор для настройки с ПК</li></ul></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Как проходит работа</h2>
+    <div class="tbl"><table>
+<thead><tr><th>Этап</th><th>Что делаем</th><th>Результат</th></tr></thead>
+<tbody>
+<tr><td>1. Требования</td><td>Набор входов и выходов, протоколы, питание, условия эксплуатации, способ монтажа</td><td>ТЗ на контроллер</td></tr>
+<tr><td>2. Схема и плата</td><td>Схемотехника с защитой и развязкой, трассировка с учётом ЭМС</td><td>Схема и файлы для производства</td></tr>
+<tr><td>3. Прошивка</td><td>Логика, протоколы, диагностика, обновление</td><td>Исходный код и сборки</td></tr>
+<tr><td>4. Образцы</td><td>Сборка, отладка, проверка на стенде с реальной нагрузкой</td><td>Опытные образцы</td></tr>
+<tr><td>5. Испытания</td><td>Проверка по ТЗ, предварительные испытания на ЭМС</td><td>Протоколы и доработанный образец</td></tr>
+<tr><td>6. Подготовка к серии</td><td>Документация, тестовое ПО для производства, корпус под DIN-рейку</td><td>Комплект для серийного выпуска</td></tr>
+</tbody>
+</table></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Требования, которые учитываем</h2>
+    <div class="tbl"><table>
+<thead><tr><th>Документ</th><th>Когда важен</th></tr></thead>
+<tbody>
+<tr><td>ТР ТС 020/2011</td><td>Электромагнитная совместимость — для большинства контроллеров</td></tr>
+<tr><td>ТР ТС 004/2011</td><td>Если контроллер питается от напряжения 50–1000 В переменного или 75–1500 В постоянного тока</td></tr>
+<tr><td>ГОСТ IEC 61131-2-2012</td><td>Контроллеры программируемые. Требования к оборудованию и испытания</td></tr>
+<tr><td>ГОСТ 14254-2015</td><td>Степень защиты корпуса (код IP)</td></tr>
+<tr><td>ТР ТС 012/2011</td><td>Если контроллер устанавливается во взрывоопасной зоне</td></tr>
+</tbody>
+</table></div>
+    <div class="note">Контроллер с питанием 24 В постоянного тока не подпадает под ТР ТС 004/2011 — напряжение ниже 75 В. Набор требований для конкретного изделия определяем на этапе ТЗ.</div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2s">Вопросы и ответы</h2>
+    <div class="faq">
+        <details><summary>Чем ваш контроллер лучше готового серийного?</summary><p>Готовый контроллер выгоднее, если он закрывает задачу. Свой имеет смысл, когда нужен особый набор входов и выходов, нестандартный протокол, габариты, условия эксплуатации или цена в серии, которую готовые решения не дают. Это оцениваем на этапе ТЗ.</p></details>
+        <details><summary>Какие протоколы связи поддерживаете?</summary><p>Протоколы выбираем под систему, в которую встраивается контроллер: как правило, это Modbus RTU по RS-485, Modbus TCP по Ethernet, CAN, а для удалённых объектов — беспроводная связь и передача данных на сервер. Если нужен протокол заказчика, реализуем его по описанию.</p></details>
+        <details><summary>Пишете ли вы программу для пользователя контроллера?</summary><p>Делаем прошивку контроллера и, если нужно, конфигуратор для ПК: настройка входов и выходов, параметров связи, диагностика и обновление. Подробнее — на странице <a href="/uslugi/prikladnoe-po/">«Прикладное ПО к прибору»</a>.</p></details>
+        <details><summary>Какие требования применимы к промышленному контроллеру?</summary><p>Как правило, ТР ТС 020/2011 по электромагнитной совместимости, а при питании от сети — ТР ТС 004/2011. Для программируемых контроллеров есть ГОСТ IEC 61131-2-2012 с требованиями к оборудованию и испытаниям. Полная карта — в статье <a href="/blog/tehreglamenty-na-pribory/">«Какие техрегламенты действуют на электронные приборы»</a>.</p></details>
+        <details><summary>Можно доработать контроллер, который уже выпускается?</summary><p>Да. Начинаем с разбора схемы, платы и прошивки: что можно улучшить, какие компоненты заменить на доступные, что добавить. По итогам — список доработок и новая ревизия.</p></details>
+      </div>
+  </section>
+
+  <section class="sec"><h2 class="h2s">Смотрите также</h2><div class="rel" style="margin-top:28px"><a href="/uslugi/proshivki/">Разработка прошивок<span>Услуга</span></a><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы<span>Услуга</span></a><a href="/otrasli/promyshlennost/">Электроника для промышленности и АСУ ТП<span>Отрасль</span></a><a href="/blog/tehreglamenty-na-pribory/">Какие техрегламенты ТР ТС действуют на электронные приборы<span>Статья в блоге</span></a><a href="/blog/razrabotka-proshivki/">Разработка прошивки для прибора: полный гайд<span>Статья в блоге</span></a><a href="/blog/sertifikaciya-ili-deklarirovanie/">Сертификация или декларирование: как вывести прибор на рынок ЕАЭС<span>Статья в блоге</span></a></div></section>
+</main>
+
+<section class="formblk" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="h2s">Оценим ваш проект</h2>
+      <p class="subs">Опишите, что должен делать прибор и на каком этапе проект. Свяжемся, уточним детали и предложим следующий шаг. NDA подписываем до передачи технической информации.</p>
+      <div class="cinfo">
+        <a href="tel:+79853169104"><small>Телефон</small><strong>+7 985 316-91-04</strong></a>
+        <a href="https://t.me/tandelovtat" target="_blank" rel="noopener"><small>Telegram</small><strong>@tandelovtat</strong></a>
+        <a href="mailto:info@gmt-engineering.ru"><small>Почта</small><strong>info@gmt-engineering.ru</strong></a>
+      </div>
+    </div>
+    <form class="frm" action="https://functions.yandexcloud.net/d4epoq54usbmohm89fic" method="POST" data-lead>
+      <input type="hidden" name="_subject" value="Заявка с gmt-engineering.ru">
+      <input type="hidden" name="source" value="gmt-engineering.ru">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <div><label class="l" for="f-name">Имя и компания</label><input type="text" id="f-name" name="name" required autocomplete="organization" placeholder="Иван, ООО «Прибор»"></div>
+      <div><label class="l" for="f-phone">Телефон</label><input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="+7 ..."></div>
+      <fieldset>
+        <legend>Как удобнее связаться</legend>
+        <div class="ways">
+          <label><input type="radio" name="contact_way" value="Звонок" checked><span>Звонок</span></label>
+          <label><input type="radio" name="contact_way" value="Telegram"><span>Telegram</span></label>
+          <label><input type="radio" name="contact_way" value="WhatsApp"><span>WhatsApp</span></label>
+          <label><input type="radio" name="contact_way" value="Почта"><span>Почта</span></label>
+        </div>
+      </fieldset>
+      <div><label class="l" for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: контроллер на DIN-рейку, 8 входов 4–20 мА, 4 реле, Modbus RTU и TCP, питание 24 В"></textarea></div>
+      <div class="agree"><input type="checkbox" id="f-agree" name="consent_pd" value="on" required><label for="f-agree">Даю согласие на обработку персональных данных в соответствии с <a href="/privacy/">Политикой конфиденциальности</a></label></div>
+      <button class="btn btn-cta" type="submit">Получить оценку</button>
+      <div class="ok" role="status">Спасибо! Заявка отправлена, мы свяжемся с вами в ближайшее время.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="max-width:420px;display:flex;flex-direction:column;gap:14px">
+      <a class="logo" href="/"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <span>Разработка приборов и электроники под ключ</span>
+      <span>ООО «Глобальные Медицинские Технологии»<br>ОГРН 1247700287834 · ИНН 9710131540</span>
+    </div>
+    <nav aria-label="Услуги"><ul>
+      <li><a href="/uslugi/razrabotka-pribora/">Разработка прибора под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы</a></li><li><a href="/uslugi/proshivki/">Разработка прошивок</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО к прибору</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li>
+    </ul></nav>
+    <nav aria-label="Направления"><ul>
+      <li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li>
+    </ul></nav>
+    <nav aria-label="Меню в подвале"><ul>
+      <li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    </ul></nav>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <a href="tel:+79853169104" style="color:#fff;font-weight:600;font-size:17px">+7 985 316-91-04</a>
+      <a href="https://t.me/tandelovtat" target="_blank" rel="noopener">Telegram: @tandelovtat</a>
+      <a href="mailto:info@gmt-engineering.ru">info@gmt-engineering.ru</a>
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/privacy/#cookies" data-cookie-settings>Настройки cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/leads.js" defer></script>
+<script>
+document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.shell').classList.remove('open')})});
+</script>
+</body>
+</html>
