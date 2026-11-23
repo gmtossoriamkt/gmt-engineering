@@ -191,3 +191,21 @@ form.frm{background:#fff;color:var(--graphite);border-radius:var(--r-lg);padding
   .acts .btn{width:100%}
 }
 .page .summary a{color:var(--cyan-text);text-decoration:underline}
+
+/* Схемы в статьях: маршрут по шагам (.flow) и дерево решений (.dtree) */
+.prose .scheme{margin:32px 0 8px}
+.prose .scheme figcaption{font-size:14px;color:#5b6573;margin-top:10px}
+.prose .flow{list-style:none;padding-left:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:f;margin:0}
+.prose .flow li{position:relative;background:#F5F7FA;border-radius:16px;padding:16px 16px 16px 60px;font-size:15px;line-height:1.45;counter-increment:f}
+.prose .flow li::before{content:counter(f);position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:50%;background:#102B3F;color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.prose .flow li b{display:block;color:#102B3F;margin-bottom:2px}
+.prose .flow li.end{background:#e3f6f6}
+.prose .flow li.end::before{background:#00B3B3;color:#102B3F}
+.prose .dtree{font-size:15px;line-height:1.45}
+.prose .dtree .q{background:#102B3F;color:#fff;border-radius:16px;padding:16px 18px;font-weight:600}
+.prose .dtree .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.prose .dtree .lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#008f8f;margin-bottom:6px}
+.prose .dtree .res{background:#F5F7FA;border-left:4px solid #00B3B3;border-radius:12px;padding:14px 16px}
+.prose .dtree .res b{color:#102B3F}
+@media (max-width:720px){.prose .flow{grid-template-columns:1fr}}
+@media (max-width:560px){.prose .dtree .row{grid-template-columns:1fr}}

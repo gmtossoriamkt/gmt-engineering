@@ -4,12 +4,12 @@
 
 Статический сайт ГМТ Инжиниринг (разработка приборов и электроники под ключ). Без сборки: Timeweb App Platform (тип HTML/CSS/JS) отдаёт файлы репозитория как есть с ветки `main`, автодеплой на каждый пуш. Всё, что лежит в репозитории, доступно по адресу сайта — не класть сюда ничего приватного.
 
-- Главная `index.html` держит стили у себя. Внутренние страницы (блог, статьи) подключают `/assets/site.css`.
+- Главная `index.html` держит стили у себя. Внутренние страницы (блог, статьи) подключают `/assets/site.css` (со строкой версии `?v=…`, её обновлять при изменении стилей).
 - Цвета брендбука: тёмно-синий `#102B3F`, циан `#00B3B3`, графит `#23272E`, светлый `#F5F7FA`. Шрифт Montserrat — локальный: `/assets/fonts.css` + `/assets/fonts/montserrat-{400..800}.woff2` (preload 400 и 600). Google Fonts не подключать.
 - Контакты: +7 985 316-91-04, Telegram @tandelovtat, info@gmt-engineering.ru. Юрлицо ООО «Глобальные Медицинские Технологии», ОГРН 1247700287834, ИНН 9710131540.
 - Яндекс Метрика 113710867 подключается ТОЛЬКО через `<script src="/assets/cookie-consent.js" defer></script>` в `<head>` (запуск после «Принять» в плашке cookie). Код счётчика и noscript-пиксель в страницы не вставлять. В подвале — ссылка `data-cookie-settings` «Настройки cookie». Цель заявки — `ym(113710867,'reachGoal','lead')`.
 - Закреплённая шапка: `<script src="/assets/sticky-header.js" defer></script>` в `<head>` каждой страницы (кроме 404) — сразу после cookie-consent.js. Скрипт сам добавляет стили; шапку не дублировать вручную. Он же показывает на телефонах плавающую кнопку Telegram (`.tg-float`) и сворачивает меню в «☰», если пункты не помещаются в шапку (`.nav-compact`).
-- Превью ссылок: `/assets/og-image.png` (1200×630) — og:image, og:site_name, twitter:card на каждой странице.
+- Превью ссылок: `/assets/og-image.png` (1200×630) — og:image, og:site_name, twitter:card на каждой странице. У статей блога — своя обложка `/assets/og/<slug>.png` (1200×630, тёмно-синий фон, логотип, плашка рубрики, H1, «Блог · gmt-engineering.ru», схема-микросхема справа) в og:image и twitter:image.
 - Форма заявок: `<form class="frm" action="https://functions.yandexcloud.net/d4epoq54usbmohm89fic" method="POST" data-lead>` + `/assets/leads.js` (JSON на функцию Яндекс Облака → письмо на info@gmt-engineering.ru через SMTP Timeweb; данные в РФ). Поля: name, phone, contact_way, task, `_subject`, `source=gmt-engineering.ru`, ловушка `_gotcha`, чекбокс `consent_pd=on`. Код функции в репозиторий не класть (репозиторий публичный).
 - Сайт открыт для индексации с 21.10.2026 (robots.txt Allow + Sitemap). На новых страницах НЕ ставить meta noindex (кроме 404). Права в Яндекс.Вебмастере — файл `yandex_a8a61f28343e64fc.html` в корне, не удалять.
 - Страницы услуг: `/uslugi/razrabotka-pribora/`, `/uslugi/skhemotekhnika/`, `/uslugi/proshivki/`, `/uslugi/prikladnoe-po/`, `/uslugi/korpusa-prototipy/`; отрасли `/otrasli/medicinskie-pribory/`, `/otrasli/promyshlennost/`; приборы `/pribory/datchiki/`, `/pribory/kontrollery/`, `/pribory/analizatory/`; стоимость `/stoimost/` (WebPage); контакты `/kontakty/` — на `/assets/site.css` (классы `.page .sec .cards .split .box .formblk .frm`), JSON-LD Service + BreadcrumbList + FAQPage. Новую услугу добавлять в футер всех страниц (nav «Услуги»; отрасли и приборы — nav «Направления»), в плитки главной и в `sitemap.xml`.
@@ -27,6 +27,8 @@
 5. Добавить URL в `sitemap.xml`.
 6. На главной `index.html` в блоке «Свежие статьи» (`#blog`, `.lposts`) поставить новую статью первой карточкой `.lpost`, последнюю (третью) убрать.
 7. Поставить ссылку на статью в «Смотрите также» (`.rel`) профильных страниц услуг.
+8. Сделать обложку `/assets/og/<slug>.png` в стиле остальных обложек и прописать её в og:image и twitter:image статьи.
+9. При правке опубликованной статьи: обновить dateModified в JSON-LD, lastmod в sitemap.xml и дописать в плашку даты « · обновлено <дата>».
 
 Рубрики (`data-tags`, 1–2 через пробел): `razrabotka` — разработка железа, корпус, испытания (кластеры E, J); `po` — прошивки и прикладное ПО (F, G); `sert` — сертификация ТР ТС и метрология (A, B); `lokal` — локализация, реестры, госзакупки (C, D); `eaes` — ЕАЭС и экспорт (I); `otrasli` — отрасли (H); `trendy` — тренды (K).
 

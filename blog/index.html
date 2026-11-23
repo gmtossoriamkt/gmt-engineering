@@ -20,7 +20,7 @@
 <link rel="preload" href="/assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=20261123">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Blog","name":"Блог ГМТ Инжиниринг","url":"https://gmt-engineering.ru/blog/","publisher":{"@type":"Organization","name":"ГМТ Инжиниринг","legalName":"ООО «Глобальные Медицинские Технологии»","url":"https://gmt-engineering.ru/"}}
 </script>
@@ -122,6 +122,10 @@
 <script>
 (function(){
   var btns=document.querySelectorAll('.chips button'),posts=document.querySelectorAll('#posts .post'),empty=document.getElementById('empty');
+  // рубрики без статей не показываем — кнопка появится сама с первой статьёй рубрики
+  btns.forEach(function(b){var f=b.dataset.f;if(f==='all')return;var n=0;
+    posts.forEach(function(p){if((' '+p.dataset.tags+' ').indexOf(' '+f+' ')>-1)n++});
+    if(!n)b.hidden=true;});
   btns.forEach(function(b){b.addEventListener('click',function(){
     var f=b.dataset.f,shown=0;
     btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
