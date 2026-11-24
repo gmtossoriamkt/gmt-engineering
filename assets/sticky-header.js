@@ -23,6 +23,7 @@
     'body>header{position:sticky;top:0;z-index:100}' +
     /* шапка на средних экранах: плотнее отступы; если всё равно не помещается — меню сворачивается в кнопку */
     '@media (min-width:1181px) and (max-width:1600px){.navpill{gap:24px!important;padding:0 22px!important}.navpill ul{gap:18px!important;font-size:14.5px!important}.contactpill{gap:10px!important;padding:0 8px 0 18px!important}.contactpill .tel{font-size:15px!important}.topbar>.btn{padding:0 22px!important;font-size:16px!important}}' +
+    '@media (min-width:1181px) and (max-width:1440px){.navpill{gap:16px!important;padding:0 18px!important}.navpill ul{gap:14px!important}.contactpill{padding:0 6px 0 14px!important}}' +
     '.shell.nav-compact .navpill ul{display:none!important}.shell.nav-compact .menu-btn{display:inline-flex!important}.shell.nav-compact .navpill{justify-content:space-between}' +
     /* плавающая кнопка Telegram — только на телефонах */
     '.tg-float{display:none}' +
