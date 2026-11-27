@@ -1,0 +1,46 @@
+name: deploy-dist
+
+# На каждый пуш в main: проверка → сборка dist без служебных файлов → публикация в ветку timeweb-dist.
+# Timeweb App Platform выкладывает сайт из ветки timeweb-dist (настройка приложения: ветка timeweb-dist, директория /).
+# Пока в Timeweb стоит ветка main, этот workflow ничего на сайте не меняет.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-dist
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: check_blog
+        run: python3 scripts/check_blog.py
+      - name: build_dist
+        run: |
+          python3 scripts/build_dist.py dist
+          printf '%s' "${GITHUB_SHA}" > dist/version.txt
+          for p in scripts factcheck CLAUDE.md content-plan.csv .claude .github .git; do
+            if [ -e "dist/$p" ]; then echo "::error::В dist попало служебное: $p"; exit 1; fi
+          done
+          echo "dist: $(find dist -type f | wc -l) файлов, $(du -sh dist | cut -f1)"
+      - name: Публикация в timeweb-dist
+        run: |
+          cd dist
+          git init -q -b timeweb-dist
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "dist из ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/timeweb-dist
+          echo "timeweb-dist обновлена ← ${GITHUB_SHA}"
