@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Блог о разработке приборов — ГМТ Инжиниринг</title>
+<meta name="description" content="Статьи о разработке приборов и электроники: схемотехника, прошивки, ПО, испытания, сертификация ТР ТС, метрология, локализация и выход на рынок ЕАЭС.">
+<link rel="canonical" href="https://gmt-engineering.ru/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Блог о разработке приборов — ГМТ Инжиниринг">
+<meta property="og:description" content="Статьи о разработке приборов и электроники: схемотехника, прошивки, ПО, испытания, сертификация и выход на рынок ЕАЭС.">
+<meta property="og:url" content="https://gmt-engineering.ru/blog/">
+<meta property="og:image" content="https://gmt-engineering.ru/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="ГМТ Инжиниринг">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#102B3F">
+<link rel="preload" href="/assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/montserrat-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css?v=20261127">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Блог ГМТ Инжиниринг","url":"https://gmt-engineering.ru/blog/","publisher":{"@type":"Organization","name":"ГМТ Инжиниринг","legalName":"ООО «Глобальные Медицинские Технологии»","url":"https://gmt-engineering.ru/"}}
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/sticky-header.js?v=20261127" defer></script>
+</head>
+<body>
+
+<div class="shell">
+  <div class="topbar">
+    <div class="navpill">
+      <a class="logo" href="/" aria-label="ГМТ Инжиниринг — на главную"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <nav aria-label="Основное меню"><ul>
+        <li><a href="/#services">Направления</a></li>
+        <li><a href="/#industries">Отрасли</a></li>
+        <li><a href="/#steps">Этапы работы</a></li>
+        <li><a href="/blog/" aria-current="page">Блог</a></li>
+        <li><a href="/kontakty/">Контакты</a></li>
+      </ul></nav>
+      <button class="menu-btn" type="button" aria-label="Открыть меню" onclick="document.querySelector('.shell').classList.toggle('open')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+    <div class="contactpill">
+      <a class="tel" href="tel:+79853169104">+7 985 316-91-04</a>
+      <a class="ic ic-max" href="https://max.ru/u/f9LHodD0cOLDvyS7TfGCuqMQTcuMpF-2LxGuF5nNyXHgZFoFnYUC0KjLnaQ" target="_blank" rel="noopener" aria-label="Написать в MAX" title="Написать в MAX"><img src="/assets/max.png" width="26" height="26" alt=""></a>
+      <a class="ic" href="mailto:info@gmt-engineering.ru" aria-label="Написать на почту" title="info@gmt-engineering.ru">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+    </div>
+    <a class="btn btn-cta" href="/#contact">Оценить проект</a>
+  </div>
+  <div class="mnav"><ul>
+    <li><a href="/#services">Направления</a></li><li><a href="/#industries">Отрасли</a></li><li><a href="/#steps">Этапы работы</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    <li><a href="tel:+79853169104"><b>+7 985 316-91-04</b></a></li>
+    <li><a href="https://max.ru/u/f9LHodD0cOLDvyS7TfGCuqMQTcuMpF-2LxGuF5nNyXHgZFoFnYUC0KjLnaQ" target="_blank" rel="noopener">Написать в MAX</a></li>
+  </ul></div>
+  <div class="pagehead">
+    <nav class="crumbs" aria-label="Навигация"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Блог</span></nav>
+    <h1>Блог о разработке приборов</h1>
+    <p class="lead">Разбираем, как довести прибор от идеи до серии: схемотехника, прошивки, ПО, испытания, сертификация, метрология и выход на рынок ЕАЭС.</p>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="chips" role="group" aria-label="Рубрики">
+    <button type="button" data-f="all" aria-pressed="true">Все</button>
+    <button type="button" data-f="razrabotka" aria-pressed="false">Разработка и испытания</button>
+    <button type="button" data-f="po" aria-pressed="false">Прошивки и ПО</button>
+    <button type="button" data-f="sert" aria-pressed="false">Сертификация и метрология</button>
+    <button type="button" data-f="lokal" aria-pressed="false">Локализация и госзакупки</button>
+    <button type="button" data-f="eaes" aria-pressed="false">ЕАЭС и экспорт</button>
+    <button type="button" data-f="otrasli" aria-pressed="false">Отрасли</button>
+    <button type="button" data-f="trendy" aria-pressed="false">Тренды</button>
+  </div>
+
+  <!-- Карточки: новые сверху. Формат одной карточки — см. CLAUDE.md -->
+  <div class="posts" id="posts">
+    <a class="post" href="/blog/ems-ispytaniya-pribora/" data-tags="sert razrabotka"><span class="rub">Сертификация и метрология</span><h2>ЭМС-испытания прибора: почему проваливают и как подготовиться</h2><p>Типовые причины провала по помехоэмиссии и помехоустойчивости, меры на этапе схемотехники и трассировки, предварительные ЭМС-испытания до подачи в лабораторию.</p><span class="foot"><span>27 ноября 2026 · 11 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/utverzhdenie-tipa-si-stoimost-sroki/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Утверждение типа СИ: сколько стоит, сколько длится и из чего складывается цена</h2><p>Из чего складывается цена утверждения типа средства измерений, какие сроки установлены нормой, а какие зависят от прибора, и почему 30 рабочих дней — это не вся процедура.</p><span class="foot"><span>26 ноября 2026 · 9 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/metodika-poverki-razrabotka/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Методика поверки: как разработать, опробовать и установить</h2><p>Что должно быть в методике поверки, кто её разрабатывает, опробует и устанавливает, чем это отличается от аттестации методик измерений и где теряют время.</p><span class="foot"><span>24 ноября 2026 · 10 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/faq-po-razrabotke-priborov/" data-tags="razrabotka"><span class="rub">Разработка и испытания</span><h2>FAQ по разработке приборов и электроники</h2><p>Короткие ответы на частые вопросы заказчиков: с чего начать, сколько длится, кому принадлежат права, какая документация нужна и как запустить серию.</p><span class="foot"><span>23 ноября 2026 · 7 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/faq-po-razrabotke-proshivok/" data-tags="po"><span class="rub">Прошивки и ПО</span><h2>FAQ по разработке прошивок для приборов</h2><p>Кому принадлежит код прошивки, передаются ли исходники, как обновлять приборы в полях, можно ли перенести код на другой микроконтроллер и что требуется для СИ.</p><span class="foot"><span>23 ноября 2026 · 7 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/faq-po-razrabotke-po-k-priboram/" data-tags="po"><span class="rub">Прошивки и ПО</span><h2>FAQ по разработке ПО к приборам</h2><p>Нужно ли прибору облако, кому принадлежат права на софт, как попасть в реестр российского ПО, где хранить данные и как организовать поддержку и обновления.</p><span class="foot"><span>23 ноября 2026 · 7 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/pribor-sredstvo-izmereniy-ili-net/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Прибор — это средство измерения или нет: как определить и почему это важно</h2><p>Как понять, является ли прибор средством измерений и попадает ли он в сферу госрегулирования: критерии 102-ФЗ, перечень ПП № 683, примеры и экспресс-оценка.</p><span class="foot"><span>23 ноября 2026 · 9 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/utverzhdenie-tipa-si/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Как внести прибор в Госреестр СИ: утверждение типа средства измерения в 2026</h2><p>Когда прибору нужно утверждение типа СИ, как проходят испытания и включение сведений в ФГИС «Аршин», сроки, документы, поверка — и конфигуратор для быстрой оценки.</p><span class="foot"><span>20 ноября 2026 · 16 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/faq-po-sertifikacii-priborov/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>FAQ по сертификации приборов: 15 вопросов, которые задают инженеры</h2><p>Короткие ответы на частые вопросы: нужен ли сертификат на прототип, можно ли испытывать в своей лаборатории, когда ставить EAC и что делать при отказе.</p><span class="foot"><span>19 ноября 2026 · 8 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/tr-eaes-037-rohs/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>ТР ЕАЭС 037/2016 (RoHS): ограничение опасных веществ в электронике</h2><p>Что ограничивает RoHS ЕАЭС, какие приборы под него попадают и исключены, как подтвердить соответствие декларацией и не сорвать выпуск из-за смены комплектующих.</p><span class="foot"><span>18 ноября 2026 · 10 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/obyazatelnaya-i-dobrovolnaya-sertifikaciya/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Обязательная vs добровольная сертификация: где реально нужна</h2><p>Чем обязательное подтверждение соответствия отличается от добровольной сертификации, когда нужен сертификат, а когда декларация, и как проверить систему добровольной сертификации.</p><span class="foot"><span>17 ноября 2026 · 9 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/sertifikaciya-medicinskogo-pribora/" data-tags="sert otrasli"><span class="rub">Сертификация и метрология</span><h2>Сертификация медицинского прибора: чем отличается от промышленного</h2><p>Почему медицинский прибор регистрируют, а не сертифицируют по ТР ТС, как определить статус изделия и когда в одном проекте нужны разные документы.</p><span class="foot"><span>16 ноября 2026 · 11 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/markirovka-eac/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Маркировка EAC: как правильно наносить и что проверяют</h2><p>Когда можно ставить знак EAC, каким он должен быть, куда наносить его на приборе и что грозит за маркировку без подтверждения соответствия.</p><span class="foot"><span>12 ноября 2026 · 9 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/kak-vybrat-ispytatelnuyu-laboratoriyu/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Как выбрать аккредитованную испытательную лабораторию</h2><p>Как проверить аккредитацию и область аккредитации лаборатории, что должно быть в протоколе и какие предложения должны насторожить.</p><span class="foot"><span>10 ноября 2026 · 10 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/protokoly-ispytanij-pribora/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Протоколы испытаний: какие нужны прибору и как не переплатить</h2><p>Какие протоколы нужны прибору — ЭМС, электробезопасность, климатика, — какие стандарты применять для разных типов приборов и как сгруппировать испытания.</p><span class="foot"><span>9 ноября 2026 · 11 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/deklaraciya-samostoyatelno-ili-cherez-organ/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Декларация соответствия ТР ТС своими силами или через орган: что выбрать</h2><p>Когда прибор можно задекларировать самостоятельно, когда нужны аккредитованная лаборатория и орган по сертификации, и чем рискует производитель при ошибке.</p><span class="foot"><span>5 ноября 2026 · 9 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/sertifikaciya-vzryvozashchity/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Взрывозащита Ex: как сертифицировать прибор для опасных производств</h2><p>Маршрут для нефтегаза и химии: уровни и виды взрывозащиты, как читать маркировку Ex, схемы сертификации и ошибки конструкции, из-за которых прибор не проходит.</p><span class="foot"><span>3 ноября 2026 · 12 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/stoimost-i-sroki-sertifikacii/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Сколько стоит и сколько длится сертификация прибора в 2026</h2><p>Из чего складывается цена сертификации и декларирования, где теряется время и какие сроки установлены нормами — без выдуманных прайсов.</p><span class="foot"><span>2 ноября 2026 · 10 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/tehreglamenty-na-pribory/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Какие техрегламенты ТР ТС действуют на электронные приборы: полная карта</h2><p>Матрица «признак прибора → техрегламент → форма оценки»: ЭМС, низковольтное оборудование, машины, взрывозащита, давление и опасные вещества.</p><span class="foot"><span>28 октября 2026 · 12 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/sertifikaciya-ili-deklarirovanie/" data-tags="sert"><span class="rub">Сертификация и метрология</span><h2>Сертификация или декларирование: как вывести прибор на рынок ЕАЭС в 2026</h2><p>Как определить, какие технические регламенты распространяются на прибор, нужен ли сертификат или достаточно декларации, и что изменилось в 2026 году.</p><span class="foot"><span>27 октября 2026 · 14 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/soft-dlya-pribora/" data-tags="po"><span class="rub">Прошивки и ПО</span><h2>Софт к прибору: десктоп, мобайл, облако — что и когда нужно</h2><p>Программа для ПК, мобильное приложение, облако или всё сразу: как выбрать ПО под сценарии работы с прибором и что заложить в протокол обмена.</p><span class="foot"><span>26 октября 2026 · 11 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/razrabotka-proshivki/" data-tags="po"><span class="rub">Прошивки и ПО</span><h2>Разработка прошивки для прибора: полный гайд по firmware под ключ</h2><p>Из чего состоит firmware, как идут этапы разработки, когда нужна RTOS и как принять код у подрядчика, чтобы прибор можно было сопровождать.</p><span class="foot"><span>26 октября 2026 · 12 мин</span><b>Читать →</b></span></a>
+    <a class="post" href="/blog/razrabotka-pribora-pod-klyuch/" data-tags="razrabotka"><span class="rub">Разработка и испытания</span><h2>Разработка прибора под ключ: от идеи до серии — полный маршрут</h2><p>Шесть этапов от технического задания до опытной партии: что получает заказчик на каждом шаге и где проекты теряют время.</p><span class="foot"><span>21 октября 2026 · 10 мин</span><b>Читать →</b></span></a>
+  </div>
+  <p class="empty" id="empty">В этой рубрике статьи скоро появятся.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="max-width:420px;display:flex;flex-direction:column;gap:14px">
+      <a class="logo" href="/"><b>ГМТ</b><i></i><span>ИНЖИНИРИНГ</span></a>
+      <span>Разработка приборов и электроники под ключ</span>
+      <span>ООО «Глобальные Медицинские Технологии»<br>ОГРН 1247700287834 · ИНН 9710131540</span>
+    </div>
+    <nav aria-label="Услуги"><ul>
+      <li><a href="/uslugi/razrabotka-pribora/">Разработка прибора под ключ</a></li><li><a href="/uslugi/skhemotekhnika/">Схемотехника и печатные платы</a></li><li><a href="/uslugi/proshivki/">Разработка прошивок</a></li><li><a href="/uslugi/prikladnoe-po/">Прикладное ПО к прибору</a></li><li><a href="/uslugi/korpusa-prototipy/">Корпуса и прототипы</a></li>
+    </ul></nav>
+    <nav aria-label="Направления"><ul>
+      <li><a href="/otrasli/medicinskie-pribory/">Медицинские приборы</a></li><li><a href="/otrasli/promyshlennost/">Промышленность и АСУ ТП</a></li><li><a href="/pribory/kontrollery/">Контроллеры</a></li><li><a href="/pribory/analizatory/">Анализаторы</a></li><li><a href="/pribory/datchiki/">Датчики</a></li>
+    </ul></nav>
+    <nav aria-label="Меню в подвале"><ul>
+      <li><a href="/stoimost/">Стоимость и сроки</a></li><li><a href="/marshrut/">Маршрут сертификации</a></li><li><a href="/glossarij/">Глоссарий</a></li><li><a href="/blog/">Блог</a></li><li><a href="/kontakty/">Контакты</a></li>
+    </ul></nav>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <a href="tel:+79853169104" style="color:#fff;font-weight:600;font-size:17px">+7 985 316-91-04</a>
+      <a href="https://max.ru/u/f9LHodD0cOLDvyS7TfGCuqMQTcuMpF-2LxGuF5nNyXHgZFoFnYUC0KjLnaQ" target="_blank" rel="noopener">MAX: написать</a>
+      <a href="mailto:info@gmt-engineering.ru">info@gmt-engineering.ru</a>
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/privacy/#cookies" data-cookie-settings>Настройки cookie</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.chips button'),posts=document.querySelectorAll('#posts .post'),empty=document.getElementById('empty');
+  // рубрики без статей не показываем — кнопка появится сама с первой статьёй рубрики
+  btns.forEach(function(b){var f=b.dataset.f;if(f==='all')return;var n=0;
+    posts.forEach(function(p){if((' '+p.dataset.tags+' ').indexOf(' '+f+' ')>-1)n++});
+    if(!n)b.hidden=true;});
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.f,shown=0;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    posts.forEach(function(p){var ok=f==='all'||(' '+p.dataset.tags+' ').indexOf(' '+f+' ')>-1;p.style.display=ok?'':'none';if(ok)shown++});
+    empty.style.display=shown?'none':'block';
+  })});
+})();
+</script>
+</body>
+</html>
