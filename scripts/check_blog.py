@@ -14,6 +14,7 @@
   - каждая <table> внутри <div class="tbl">;
   - sitemap: все страницы есть, нет дублей и лишних адресов, lastmod — дата не позже сегодняшней;
   - у каждой статьи есть карточка в blog/index.html с data-tags (1–2 из списка), карточки по убыванию даты;
+    плашка рубрики (карточка и статья) = название первой рубрики из data-tags, как на кнопках фильтра блога;
     на главной 3 карточки «Свежих статей» и это 3 самые новые статьи;
   - служебные файлы (CLAUDE.md, content-plan.csv, factcheck/, scripts/, .claude/, .github/) не попадают в dist
     (проверяется по правилам scripts/build_dist.py).
@@ -22,7 +23,9 @@ import glob, html, json, os, re, sys, datetime
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://gmt-engineering.ru'
-TAGS = {'razrabotka', 'po', 'sert', 'lokal', 'eaes', 'otrasli', 'trendy'}
+LABELS = {'razrabotka': 'Разработка и испытания', 'po': 'Прошивки и ПО', 'sert': 'Сертификация и метрология',
+          'lokal': 'Локализация и госзакупки', 'eaes': 'ЕАЭС и экспорт', 'otrasli': 'Отрасли', 'trendy': 'Тренды'}
+TAGS = set(LABELS)
 errors = []
 
 
@@ -127,6 +130,14 @@ for loc, lm in re.findall(r'<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>', sm):
 # карточки блога
 b = open(REPO + '/blog/index.html', encoding='utf-8').read()
 cards = re.findall(r'<a class="post" href="/blog/([^/"]+)/" data-tags="([^"]*)">', b)
+for slug, tags, rub in re.findall(r'<a class="post" href="/blog/([^/"]+)/" data-tags="([^"]*)"><span class="rub">([^<]*)</span>', b):
+    if tags.split() and LABELS.get(tags.split()[0]) != rub:
+        err(f'blog/index.html: у {slug} плашка «{rub}», а для рубрики {tags.split()[0]} нужна «{LABELS.get(tags.split()[0])}»')
+    pf = f'{REPO}/blog/{slug}/index.html'
+    if os.path.exists(pf):
+        m = re.search(r'<div class="meta"><span>([^<]*)</span>', open(pf, encoding='utf-8').read())
+        if m and m[1] != rub:
+            err(f'blog/{slug}: рубрика в плашке статьи «{m[1]}» ≠ карточке «{rub}»')
 seen = [c[0] for c in cards]
 for slug in art_dates:
     if slug not in seen:
