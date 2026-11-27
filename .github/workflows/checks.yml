@@ -1,0 +1,22 @@
+name: checks
+
+# Проверки для PR. Публикацию делает deploy-dist.yml после merge в main.
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: check_blog
+        run: python3 scripts/check_blog.py
+      - name: build_dist
+        run: |
+          python3 scripts/build_dist.py dist
+          for p in scripts factcheck CLAUDE.md content-plan.csv .claude .github .git; do
+            if [ -e "dist/$p" ]; then echo "::error::В dist попало служебное: $p"; exit 1; fi
+          done
